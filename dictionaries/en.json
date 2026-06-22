@@ -7,9 +7,9 @@
     "kontakt": "Contact"
   },
   "hero": {
-    "label": "Architecture studio",
-    "title": "We design spaces that endure",
-    "sub": "Architecture rooted in context, material and time.",
+    "label": "Engineering design — road infrastructure",
+    "title": "We build infrastructure that connects people",
+    "sub": "Comprehensive engineering design of roads, bridges and accompanying infrastructure.",
     "btn": "View projects",
     "scroll": "Scroll"
   },
@@ -19,22 +19,38 @@
   },
   "about": {
     "tag": "About the studio",
-    "title": "We design with attention",
-    "title_em": "to context",
-    "text": "We are an architecture studio from Warsaw, specialising in residential, commercial and public space design. Our projects balance function with aesthetics — always in dialogue with their surroundings.",
-    "stat1_num": "12+",
+    "title": "We design with passion",
+    "title_em": "and precision",
+    "text": "MT-Projekt Sp. z o.o. is a Polish engineering design office based in Grójec. We handle a wide range of engineering projects — from road and street design to bridges, viaducts, sanitary networks, telecommunications and power infrastructure. We use modern technologies including UAVs and advanced CAD/BIM software.",
+    "stat1_num": "15+",
     "stat1_label": "years of experience",
-    "stat2_num": "80+",
+    "stat2_num": "200+",
     "stat2_label": "completed projects",
-    "stat3_num": "6",
-    "stat3_label": "industry awards"
+    "stat3_num": "10",
+    "stat3_label": "specialisations"
+  },
+  "services": {
+    "tag": "Services",
+    "title": "Our expertise",
+    "items": [
+      "Road and street design",
+      "Bridges and viaducts",
+      "Surveying and UAV",
+      "Geotechnics",
+      "Traffic engineering and road safety",
+      "Sanitary networks",
+      "Telecommunications infrastructure",
+      "Investment supervision",
+      "Environmental protection",
+      "Power infrastructure"
+    ]
   },
   "team": {
     "label": "Team",
-    "title": "The people behind the projects"
+    "title": "Our specialists"
   },
   "contact": {
-    "title": "Let's talk\nabout your project",
+    "title": "Get in touch\nwith us",
     "name": "Full name",
     "name_placeholder": "John Smith",
     "email": "E-mail",
@@ -47,19 +63,19 @@
     "success_sub": "We will get back to you shortly."
   },
   "footer": {
-    "tagline": "Architecture rooted in context"
+    "tagline": "Comprehensive engineering design"
   },
   "project_page": {
     "back": "Projects",
     "year": "Year",
     "location": "Location",
-    "area": "Area",
+    "area": "Length / Span",
     "type": "Type",
     "next": "Next project"
   },
   "projects_page": {
     "title": "Projects",
     "count_suffix": "projects",
-    "categories": ["All", "Residential", "Commercial", "Interiors", "Public"]
+    "categories": ["All", "Roads & intersections", "Bridges & viaducts", "Traffic engineering", "Infrastructure"]
   }
 }

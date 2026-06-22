@@ -21,8 +21,8 @@ export default function HomePage({ lang, dict }: Props) {
       <section className={styles.hero}>
         <div className={styles.heroImageWrap}>
           <Image
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=90"
-            alt="Studio"
+            src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=2000&q=90"
+            alt="MT-Projekt infrastruktura drogowa"
             fill
             priority
             className={styles.heroImage}

@@ -7,9 +7,9 @@
     "kontakt": "Kontakt"
   },
   "hero": {
-    "label": "Pracownia architektoniczna",
-    "title": "Projektujemy przestrzenie, które trwają",
-    "sub": "Architektura oparta na kontekście, materiale i czasie.",
+    "label": "Biuro projektowe — infrastruktura drogowa",
+    "title": "Tworzymy infrastrukturę, która łączy ludzi",
+    "sub": "Kompleksowe projekty inżynierskie dróg, mostów i infrastruktury towarzyszącej.",
     "btn": "Zobacz projekty",
     "scroll": "Przewiń"
   },
@@ -18,23 +18,39 @@
     "see_all": "Wszystkie projekty →"
   },
   "about": {
-    "tag": "O pracowni",
-    "title": "Projektujemy z uwagą",
-    "title_em": "do kontekstu",
-    "text": "Jesteśmy pracownią architektoniczną z Warszawy, specjalizującą się w projektowaniu obiektów mieszkaniowych, biurowych i przestrzeni publicznych. Nasze projekty łączą funkcjonalność z estetyką — zawsze w dialogu z otoczeniem.",
-    "stat1_num": "12+",
+    "tag": "O biurze",
+    "title": "Projektujemy z pasją",
+    "title_em": "i precyzją",
+    "text": "MT-Projekt Sp. z o.o. to polskie biuro projektowe z siedzibą w Grójcu. Zajmujemy się szerokim zakresem projektów inżynierskich — od projektowania dróg i ulic, przez mosty i wiadukty, po sieci sanitarne, teletechniczne i elektroenergetyczne. Nasze projekty realizujemy w oparciu o nowoczesne technologie, w tym drony i zaawansowane oprogramowanie CAD/BIM.",
+    "stat1_num": "15+",
     "stat1_label": "lat doświadczenia",
-    "stat2_num": "80+",
+    "stat2_num": "200+",
     "stat2_label": "zrealizowanych projektów",
-    "stat3_num": "6",
-    "stat3_label": "nagród branżowych"
+    "stat3_num": "10",
+    "stat3_label": "specjalizacji"
+  },
+  "services": {
+    "tag": "Usługi",
+    "title": "Zakres działalności",
+    "items": [
+      "Projektowanie dróg i ulic",
+      "Mosty i wiadukty",
+      "Geodezja i UAV",
+      "Geotechnika",
+      "Inżynieria ruchu i BRD",
+      "Sieci sanitarne",
+      "Infrastruktura teletechniczna",
+      "Nadzory inwestorskie",
+      "Ochrona środowiska",
+      "Infrastruktura elektroenergetyczna"
+    ]
   },
   "team": {
     "label": "Zespół",
-    "title": "Ludzie za projektami"
+    "title": "Nasi specjaliści"
   },
   "contact": {
-    "title": "Porozmawiajmy\no projekcie",
+    "title": "Skontaktuj się\nz nami",
     "name": "Imię i nazwisko",
     "name_placeholder": "Jan Kowalski",
     "email": "E-mail",
@@ -47,19 +63,19 @@
     "success_sub": "Odezwiemy się wkrótce."
   },
   "footer": {
-    "tagline": "Architektura oparta na kontekście"
+    "tagline": "Kompleksowe projekty inżynierskie"
   },
   "project_page": {
     "back": "Projekty",
     "year": "Rok",
     "location": "Lokalizacja",
-    "area": "Powierzchnia",
+    "area": "Długość / Rozpiętość",
     "type": "Typ",
     "next": "Następny projekt"
   },
   "projects_page": {
     "title": "Projekty",
     "count_suffix": "realizacji",
-    "categories": ["Wszystkie", "Mieszkaniowe", "Komercyjne", "Wnętrza", "Użyteczność publiczna"]
+    "categories": ["Wszystkie", "Drogi i skrzyżowania", "Mosty i wiadukty", "Inżynieria ruchu", "Infrastruktura towarzysząca"]
   }
 }

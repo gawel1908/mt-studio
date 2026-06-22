@@ -1,15 +1,15 @@
-import Link from 'next/link'
-import styles from './Footer.module.css'
-import SocialIcons from '@/components/SocialIcons/SocialIcons'
+import Link from "next/link";
+import styles from "./Footer.module.css";
+import SocialIcons from "@/components/SocialIcons/SocialIcons";
 
 interface Props {
-  lang: string
-  tagline: string
+  lang: string;
+  tagline: string;
 }
 
 export default function Footer({ lang, tagline }: Props) {
-  const year = new Date().getFullYear()
-  const base = lang === 'en' ? '/en' : ''
+  const year = new Date().getFullYear();
+  const base = lang === "en" ? "/en" : "";
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -25,10 +25,10 @@ export default function Footer({ lang, tagline }: Props) {
           <Link href={`${base}/#kontakt`}>Kontakt</Link>
         </nav>
         <div className={styles.right}>
-          <p>studio@example.pl</p>
+          <p>biuro@mt-p.pl</p>
           <p>© {year} MT Projekt</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
