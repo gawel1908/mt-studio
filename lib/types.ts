@@ -12,6 +12,14 @@ export interface Project {
   featured: boolean
 }
 
+export interface TeamMember {
+  id: number
+  name: string
+  role: string
+  photo: string
+  bio?: string
+}
+
 export interface StudioInfo {
   headline: string
   subheadline: string

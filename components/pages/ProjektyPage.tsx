@@ -1,36 +1,37 @@
 import { getAllProjects } from '@/lib/mockData'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
-import styles from './projekty.module.css'
+import { Dictionary } from '@/lib/dictionaries'
+import styles from '@/styles/projekty.module.css'
 
-const categories = ['Wszystkie', 'Mieszkaniowe', 'Komercyjne', 'Wnętrza', 'Użyteczność publiczna']
+interface Props {
+  lang: string
+  dict: Dictionary
+}
 
-export default function ProjektyPage() {
+export default function ProjektyPage({ lang, dict }: Props) {
   const projects = getAllProjects()
+  const d = dict.projects_page
 
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Projekty</h1>
-        <p className={styles.count}>{projects.length} realizacji</p>
+        <h1 className={styles.title}>{d.title}</h1>
+        <p className={styles.count}>{projects.length} {d.count_suffix}</p>
       </div>
-
-      {/* Category filter — static for now, JS filtering can be added */}
       <div className={styles.filters}>
-        {categories.map(cat => (
-          <button key={cat} className={`${styles.filter} ${cat === 'Wszystkie' ? styles.filterActive : ''}`}>
+        {d.categories.map((cat: string, i: number) => (
+          <button key={cat} className={`${styles.filter} ${i === 0 ? styles.filterActive : ''}`}>
             {cat}
           </button>
         ))}
       </div>
-
       <div className={styles.grid}>
         {projects.map((project, i) => {
-          // Asymmetric pattern: 0=large, 1=small, 2=small, 3=large, ...
           const pattern = i % 4
           const size = (pattern === 0 || pattern === 3) ? 'large' : 'medium'
           return (
             <div key={project.id} className={`${styles.gridItem} ${styles[`item${pattern}`]}`}>
-              <ProjectCard project={project} size={size} />
+              <ProjectCard project={project} size={size} lang={lang} />
               <div className={styles.cardMeta}>
                 <span className={styles.cardCategory}>{project.category}</span>
                 <h3 className={styles.cardTitle}>{project.title}</h3>

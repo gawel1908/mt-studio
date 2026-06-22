@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "start": "Start",
+    "projekty": "Projekty",
+    "o_nas": "O nas",
+    "zespol": "Zespół",
+    "kontakt": "Kontakt"
+  },
+  "hero": {
+    "label": "Pracownia architektoniczna",
+    "title": "Projektujemy przestrzenie, które trwają",
+    "sub": "Architektura oparta na kontekście, materiale i czasie.",
+    "btn": "Zobacz projekty",
+    "scroll": "Przewiń"
+  },
+  "projects": {
+    "section_title": "Wybrane projekty",
+    "see_all": "Wszystkie projekty →"
+  },
+  "about": {
+    "tag": "O pracowni",
+    "title": "Projektujemy z uwagą",
+    "title_em": "do kontekstu",
+    "text": "Jesteśmy pracownią architektoniczną z Warszawy, specjalizującą się w projektowaniu obiektów mieszkaniowych, biurowych i przestrzeni publicznych. Nasze projekty łączą funkcjonalność z estetyką — zawsze w dialogu z otoczeniem.",
+    "stat1_num": "12+",
+    "stat1_label": "lat doświadczenia",
+    "stat2_num": "80+",
+    "stat2_label": "zrealizowanych projektów",
+    "stat3_num": "6",
+    "stat3_label": "nagród branżowych"
+  },
+  "team": {
+    "label": "Zespół",
+    "title": "Ludzie za projektami"
+  },
+  "contact": {
+    "title": "Porozmawiajmy\no projekcie",
+    "name": "Imię i nazwisko",
+    "name_placeholder": "Jan Kowalski",
+    "email": "E-mail",
+    "email_placeholder": "jan@example.pl",
+    "message": "Wiadomość",
+    "message_placeholder": "Opisz krótko swój projekt lub zapytanie…",
+    "submit": "Wyślij wiadomość",
+    "sending": "Wysyłanie…",
+    "success_title": "Dziękujemy za wiadomość.",
+    "success_sub": "Odezwiemy się wkrótce."
+  },
+  "footer": {
+    "tagline": "Architektura oparta na kontekście"
+  },
+  "project_page": {
+    "back": "Projekty",
+    "year": "Rok",
+    "location": "Lokalizacja",
+    "area": "Powierzchnia",
+    "type": "Typ",
+    "next": "Następny projekt"
+  },
+  "projects_page": {
+    "title": "Projekty",
+    "count_suffix": "realizacji",
+    "categories": ["Wszystkie", "Mieszkaniowe", "Komercyjne", "Wnętrza", "Użyteczność publiczna"]
+  }
+}

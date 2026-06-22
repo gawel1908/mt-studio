@@ -1,4 +1,4 @@
-import { Project, StudioInfo } from './types'
+import { Project, StudioInfo, TeamMember } from './types'
 
 // STRAPI INTEGRATION NOTE:
 // Replace these functions with Strapi API calls:
@@ -116,6 +116,41 @@ export const projects: Project[] = [
     featured: false,
   },
 ]
+
+export const team: TeamMember[] = [
+  {
+    id: 1,
+    name: 'Anna Kowalska',
+    role: 'Architektka, współzałożycielka',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80',
+    bio: 'Absolwentka Wydziału Architektury PW. Specjalizuje się w projektowaniu obiektów mieszkaniowych i przestrzeni publicznych.',
+  },
+  {
+    id: 2,
+    name: 'Marek Nowak',
+    role: 'Architekt, współzałożyciel',
+    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80',
+    bio: 'Doświadczenie zdobywał w pracowniach w Warszawie i Berlinie. Odpowiada za projekty komercyjne i użyteczności publicznej.',
+  },
+  {
+    id: 3,
+    name: 'Zofia Wiśniewska',
+    role: 'Architektka wnętrz',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80',
+    bio: 'Projektuje wnętrza z dbałością o materiał i detal. Absolwentka ASP w Krakowie.',
+  },
+  {
+    id: 4,
+    name: 'Piotr Dąbrowski',
+    role: 'Architekt',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80',
+    bio: 'Zajmuje się projektami wielorodzinnymi i rewitalizacjami. Doktorant na Wydziale Architektury PW.',
+  },
+]
+
+export function getTeam(): TeamMember[] {
+  return team
+}
 
 export function getAllProjects(): Project[] {
   return projects

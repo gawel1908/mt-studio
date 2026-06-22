@@ -7,11 +7,13 @@ import styles from './ProjectCard.module.css'
 interface Props {
   project: Project
   size?: 'large' | 'medium' | 'small'
+  lang?: string
 }
 
-export default function ProjectCard({ project, size = 'medium' }: Props) {
+export default function ProjectCard({ project, size = 'medium', lang = 'pl' }: Props) {
+  const base = lang === 'en' ? '/en' : ''
   return (
-    <Link href={`/projekty/${project.slug}`} className={`${styles.card} ${styles[size]}`}>
+    <Link href={`${base}/projekty/${project.slug}`} className={`${styles.card} ${styles[size]}`}>
       <div className={styles.imageWrap}>
         <Image
           src={project.coverImage}

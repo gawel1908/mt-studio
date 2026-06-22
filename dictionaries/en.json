@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "start": "Home",
+    "projekty": "Projects",
+    "o_nas": "About",
+    "zespol": "Team",
+    "kontakt": "Contact"
+  },
+  "hero": {
+    "label": "Architecture studio",
+    "title": "We design spaces that endure",
+    "sub": "Architecture rooted in context, material and time.",
+    "btn": "View projects",
+    "scroll": "Scroll"
+  },
+  "projects": {
+    "section_title": "Selected projects",
+    "see_all": "All projects →"
+  },
+  "about": {
+    "tag": "About the studio",
+    "title": "We design with attention",
+    "title_em": "to context",
+    "text": "We are an architecture studio from Warsaw, specialising in residential, commercial and public space design. Our projects balance function with aesthetics — always in dialogue with their surroundings.",
+    "stat1_num": "12+",
+    "stat1_label": "years of experience",
+    "stat2_num": "80+",
+    "stat2_label": "completed projects",
+    "stat3_num": "6",
+    "stat3_label": "industry awards"
+  },
+  "team": {
+    "label": "Team",
+    "title": "The people behind the projects"
+  },
+  "contact": {
+    "title": "Let's talk\nabout your project",
+    "name": "Full name",
+    "name_placeholder": "John Smith",
+    "email": "E-mail",
+    "email_placeholder": "john@example.com",
+    "message": "Message",
+    "message_placeholder": "Briefly describe your project or enquiry…",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "success_title": "Thank you for your message.",
+    "success_sub": "We will get back to you shortly."
+  },
+  "footer": {
+    "tagline": "Architecture rooted in context"
+  },
+  "project_page": {
+    "back": "Projects",
+    "year": "Year",
+    "location": "Location",
+    "area": "Area",
+    "type": "Type",
+    "next": "Next project"
+  },
+  "projects_page": {
+    "title": "Projects",
+    "count_suffix": "projects",
+    "categories": ["All", "Residential", "Commercial", "Interiors", "Public"]
+  }
+}
