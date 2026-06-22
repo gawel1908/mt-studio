@@ -1,0 +1,80 @@
+.card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.large .imageWrap { aspect-ratio: 16/10; }
+.medium .imageWrap { aspect-ratio: 4/3; }
+.small .imageWrap { aspect-ratio: 3/4; }
+
+.image {
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.75) 0%,
+    rgba(10, 10, 10, 0.2) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  padding: 28px;
+  width: 100%;
+  transform: translateY(8px);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .overlayContent {
+  transform: translateY(0);
+}
+
+.category {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 6px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.year {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-display);
+}
