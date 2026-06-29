@@ -7,8 +7,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
-      // STRAPI: add your Strapi domain here
-      // { protocol: 'https', hostname: 'your-strapi-domain.com' },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
 }
