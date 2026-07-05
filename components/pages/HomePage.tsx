@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { getFeaturedProjects, studioInfo, getTeam } from '@/lib/mockData'
+import { studioInfo } from '@/lib/mockData'
+import { getFeaturedProjects, getTeam } from '@/lib/sanity'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import ContactForm from '@/components/ContactForm/ContactForm'
 import { Dictionary } from '@/lib/dictionaries'
@@ -11,9 +12,9 @@ interface Props {
   dict: Dictionary
 }
 
-export default function HomePage({ lang, dict }: Props) {
-  const featured = getFeaturedProjects()
-  const team = getTeam()
+export default async function HomePage({ lang, dict }: Props) {
+  const featured = await getFeaturedProjects(lang)
+  const team = await getTeam(lang)
   const base = lang === 'en' ? '/en' : ''
 
   return (

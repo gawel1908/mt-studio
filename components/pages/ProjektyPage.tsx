@@ -1,4 +1,4 @@
-import { getAllProjects } from '@/lib/mockData'
+import { getAllProjects } from '@/lib/sanity'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import { Dictionary } from '@/lib/dictionaries'
 import styles from '@/styles/projekty.module.css'
@@ -8,8 +8,8 @@ interface Props {
   dict: Dictionary
 }
 
-export default function ProjektyPage({ lang, dict }: Props) {
-  const projects = getAllProjects()
+export default async function ProjektyPage({ lang, dict }: Props) {
+  const projects = await getAllProjects(lang)
   const d = dict.projects_page
 
   return (

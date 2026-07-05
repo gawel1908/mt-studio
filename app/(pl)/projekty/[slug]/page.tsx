@@ -1,9 +1,10 @@
 import { getDictionary } from '@/lib/dictionaries'
 import ProjektPage from '@/components/pages/ProjektPage'
-import { getAllSlugs } from '@/lib/mockData'
+import { getAllSlugs } from '@/lib/sanity'
 
 export async function generateStaticParams() {
-  return getAllSlugs().map(slug => ({ slug }))
+  const slugs = await getAllSlugs()
+  return slugs.map(slug => ({ slug }))
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

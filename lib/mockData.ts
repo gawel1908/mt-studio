@@ -11,7 +11,7 @@ export const studioInfo: StudioInfo = {
 
 export const projects: Project[] = [
   {
-    id: 1,
+    id: '1',
     slug: 'skrzyzowania-warszawa',
     title: 'Przebudowa skrzyżowań — Warszawa',
     category: 'Drogi i skrzyżowania',
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 2,
+    id: '2',
     slug: 'droga-grodzisk',
     title: 'Budowa drogi z rondem — Grodzisk Maz.',
     category: 'Drogi i skrzyżowania',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 3,
+    id: '3',
     slug: 'wiadukt-grzegorzewice',
     title: 'Przebudowa wiaduktu — Grzegorzewice',
     category: 'Mosty i wiadukty',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
+    id: '4',
     slug: 'droga-kampinos',
     title: 'Przebudowa drogi powiatowej — Kampinos',
     category: 'Drogi i skrzyżowania',
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 5,
+    id: '5',
     slug: 'infrastruktura-zyrardow',
     title: 'Infrastruktura drogowa — Żyrardów',
     category: 'Infrastruktura towarzysząca',
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 6,
+    id: '6',
     slug: 'audit-brd-tamka',
     title: 'Audyt BRD i inżynieria ruchu — Tamka',
     category: 'Inżynieria ruchu',
@@ -110,28 +110,28 @@ export const projects: Project[] = [
 
 export const team: TeamMember[] = [
   {
-    id: 1,
+    id: '1',
     name: 'Marek Tomaszewski',
     role: 'Główny projektant, założyciel',
     photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80',
     bio: 'Inżynier dróg i mostów z wieloletnim doświadczeniem w projektowaniu infrastruktury drogowej.',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Anna Wiśniewska',
     role: 'Projektant dróg',
     photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80',
     bio: 'Specjalizuje się w projektowaniu dróg miejskich i skrzyżowań. Absolwentka Politechniki Warszawskiej.',
   },
   {
-    id: 3,
+    id: '3',
     name: 'Piotr Kowalski',
     role: 'Projektant mostów',
     photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80',
     bio: 'Doświadczony konstruktor obiektów mostowych i inżynierskich. Specjalista BIM.',
   },
   {
-    id: 4,
+    id: '4',
     name: 'Zofia Dąbrowska',
     role: 'Inżynier geodeta',
     photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80',

@@ -1,5 +1,11 @@
+export interface SanityImage {
+  _type: 'image'
+  asset: { _ref: string; _type: 'reference' }
+  hotspot?: { x: number; y: number; height: number; width: number }
+}
+
 export interface Project {
-  id: number
+  id: string
   slug: string
   title: string
   category: string
@@ -13,7 +19,7 @@ export interface Project {
 }
 
 export interface TeamMember {
-  id: number
+  id: string
   name: string
   role: string
   photo: string
