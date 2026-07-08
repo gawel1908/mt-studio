@@ -1,18 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
-import SocialIcons from "@/components/SocialIcons/SocialIcons";
 
-const SECTIONS = ["o-nas", "zespol", "kontakt"];
+const SECTIONS = ["o-nas", "zespol", "wspolpraca", "kontakt"];
 
 interface NavDict {
-  start: string;
-  projekty: string;
+  strona_glowna: string;
   o_nas: string;
+  projekty: string;
+  wspolpraca: string;
+  wspolpraca_krajowa: string;
+  wspolpraca_miedzynarodowa: string;
   zespol: string;
   kontakt: string;
+  zapytanie: string;
 }
 
 interface Props {
@@ -23,11 +26,11 @@ interface Props {
 export default function Navbar({ lang, dict }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const otherLang = lang === "pl" ? "en" : "pl";
-  // pl → add /en prefix; en → remove /en prefix
   const switchPath =
     lang === "en"
       ? pathname.replace(/^\/en/, "") || "/"
@@ -39,27 +42,30 @@ export default function Navbar({ lang, dict }: Props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
+
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+    const handleClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   useEffect(() => {
     const base = lang === "en" ? "/en" : "";
     const isHome = pathname === base || pathname === base + "/";
-    if (!isHome) {
-      setActiveSection(null);
-      return;
-    }
+    if (!isHome) { setActiveSection(null); return; }
 
     const observers: IntersectionObserver[] = [];
     SECTIONS.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
       const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
-        { rootMargin: "-40% 0px -50% 0px" },
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { rootMargin: "-40% 0px -50% 0px" }
       );
       obs.observe(el);
       observers.push(obs);
@@ -68,9 +74,8 @@ export default function Navbar({ lang, dict }: Props) {
   }, [pathname, lang]);
 
   const base = lang === "en" ? "/en" : "";
-  const isHome = pathname === base || pathname === base + "/";
   const isProjects = pathname.startsWith(`${base}/projekty`);
-
+  const isAbout = pathname === `${base}/o-nas`;
   const cls = (active: boolean) => (active ? styles.active : "");
 
   return (
@@ -81,36 +86,63 @@ export default function Navbar({ lang, dict }: Props) {
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+          <Link href={base || "/"} className={cls(!isProjects && !isAbout && activeSection === null)}>
+            {dict.strona_glowna}
+          </Link>
+          <Link href={`${base}/o-nas`} className={cls(isAbout)}>
+            {dict.o_nas}
+          </Link>
           <Link href={`${base}/projekty`} className={cls(isProjects)}>
             {dict.projekty}
           </Link>
-          <Link href={`${base}/#o-nas`} className={cls(activeSection === "o-nas")}>
-            {dict.o_nas}
-          </Link>
+
+          {/* Dropdown Współpraca */}
+          <div className={styles.dropdown} ref={dropdownRef}>
+            <button
+              className={`${styles.dropdownToggle} ${cls(activeSection === "wspolpraca")}`}
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              {dict.wspolpraca}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {dropdownOpen && (
+              <div className={styles.dropdownMenu}>
+                <a href={`${base}/#wspolpraca`} className={styles.dropdownItem} onClick={() => setDropdownOpen(false)}>
+                  {dict.wspolpraca_krajowa}
+                </a>
+                <a href={`${base}/#wspolpraca`} className={styles.dropdownItem} onClick={() => setDropdownOpen(false)}>
+                  {dict.wspolpraca_miedzynarodowa}
+                </a>
+              </div>
+            )}
+          </div>
+
           <Link href={`${base}/#zespol`} className={cls(activeSection === "zespol")}>
             {dict.zespol}
           </Link>
-          <Link
-            href={`${base}/#kontakt`}
-            className={`${styles.contactLink} ${cls(activeSection === "kontakt")}`}
-          >
+          <Link href={`${base}/#kontakt`} className={cls(activeSection === "kontakt")}>
             {dict.kontakt}
           </Link>
         </nav>
 
         <div className={styles.right}>
-          <SocialIcons className={styles.navSocials} />
           <Link href={switchPath} className={styles.langSwitch}>
-            {otherLang.toUpperCase()}
+            {lang === "pl" ? "EN" : "PL"}
           </Link>
+          <a href={`${base}/#kontakt`} className={styles.cta}>
+            {dict.zapytanie}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
           <button
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >
-            <span />
-            <span />
-            <span />
+            <span /><span /><span />
           </button>
         </div>
       </div>

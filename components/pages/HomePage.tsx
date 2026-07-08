@@ -4,6 +4,7 @@ import { studioInfo } from '@/lib/mockData'
 import { getFeaturedProjects, getTeam } from '@/lib/sanity'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import ContactForm from '@/components/ContactForm/ContactForm'
+import CooperationTabs from '@/components/CooperationTabs/CooperationTabs'
 import { Dictionary } from '@/lib/dictionaries'
 import styles from '@/styles/home.module.css'
 
@@ -12,121 +13,205 @@ interface Props {
   dict: Dictionary
 }
 
+const marqueeItems = [
+  'Drogi i ulice', 'Obiekty inżynierskie', 'Odwodnienie i sieci',
+  'Organizacja ruchu', 'Mosty i przepusty', 'BIM / CAD',
+  'Geotechnika', 'Nadzory inwestorskie', 'Infrastruktura techniczna',
+]
+
+const timelineItems = [
+  { year: '2009', title: 'Początki', text: 'Pierwsze opracowania projektowe dla lokalnych inwestycji drogowych i infrastrukturalnych.' },
+  { year: '2012', title: 'Specjalizacja', text: 'Rozwój kompetencji w zakresie dróg, ulic, skrzyżowań, odwodnienia i infrastruktury towarzyszącej.' },
+  { year: '2014', title: 'Rozwój zespołu', text: 'Zwiększenie liczby specjalistów branżowych i wdrożenie nowych standardów projektowania.' },
+  { year: '2016', title: 'Projekty wielobranżowe', text: 'Realizacja dokumentacji wymagających koordynacji branżowej i współpracy z gestorami sieci.' },
+  { year: '2018', title: 'Wdrożenie BIM', text: 'Rozpoczęcie prac w technologii BIM i zaawansowanych narzędziach CAD.' },
+  { year: '2020', title: 'Kompleksowe dokumentacje', text: 'Obsługa inwestycji od koncepcji przez projekty budowlane po wsparcie etapu realizacji.' },
+  { year: '2022', title: 'Współpraca zagraniczna', text: 'Rozpoczęcie współpracy z zagranicznymi biurami projektowymi i wykonawcami.' },
+  { year: '2024', title: 'Nowy kierunek', text: 'Rozwój standardów pracy, narzędzi CAD/BIM oraz współpracy z partnerami krajowymi i zagranicznymi.' },
+]
+
 export default async function HomePage({ lang, dict }: Props) {
   const featured = await getFeaturedProjects(lang)
   const team = await getTeam(lang)
   const base = lang === 'en' ? '/en' : ''
+  const d = dict as any
+
+  const marqueeEn = [
+    'Roads & streets', 'Engineering structures', 'Drainage & networks',
+    'Traffic management', 'Bridges & culverts', 'BIM / CAD',
+    'Geotechnics', 'Investment supervision', 'Technical infrastructure',
+  ]
+  const marqueeList = lang === 'en' ? marqueeEn : marqueeItems
 
   return (
     <>
+      {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroImageWrap}>
           <Image
-            src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=2000&q=90"
+            src="/images/heromain.png"
             alt="MT-Projekt infrastruktura drogowa"
-            fill
-            priority
+            fill priority
             className={styles.heroImage}
           />
           <div className={styles.heroOverlay} />
         </div>
         <div className={styles.heroContent}>
-          <div className={styles.heroLabel}>{dict.hero.label}</div>
-          <h1 className={styles.heroTitle}>{dict.hero.title}</h1>
-          <p className={styles.heroSub}>{dict.hero.sub}</p>
-          <Link href={`${base}/projekty`} className={styles.heroBtn}>
-            {dict.hero.btn}
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
+          <div className={styles.heroEyebrow}>{d.hero.label}</div>
+          <h1 className={styles.heroTitle}>{d.hero.title}</h1>
+          <p className={styles.heroSub}>{d.hero.sub}</p>
+          <div className={styles.heroBtns}>
+            <Link href={`${base}/projekty`} className={styles.heroBtn}>
+              {d.hero.btn}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </Link>
+          </div>
         </div>
         <div className={styles.heroScroll}>
-          <span>{dict.hero.scroll}</span>
+          <span>{d.hero.scroll}</span>
           <div className={styles.scrollLine} />
         </div>
       </section>
 
-      <section className={styles.projects}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>{dict.projects.section_title}</h2>
-          <Link href={`${base}/projekty`} className={styles.seeAll}>{dict.projects.see_all}</Link>
+      {/* MARQUEE */}
+      <div className={styles.marquee}>
+        <div className={styles.marqueeTrack}>
+          {[...marqueeList, ...marqueeList].map((item, i) => (
+            <span key={i}>{item}</span>
+          ))}
         </div>
-        <div className={styles.projectsGrid}>
-          <div className={styles.gridLarge}>
-            <ProjectCard project={featured[0]} size="large" lang={lang} />
-          </div>
-          <div className={styles.gridSmall}>
-            {featured.slice(1, 3).map(p => (
-              <ProjectCard key={p.id} project={p} size="medium" lang={lang} />
+      </div>
+
+      {/* O NAS (short) */}
+      <section className={styles.aboutShort} id="o-nas">
+        <div className={styles.aboutShortInner}>
+          <span className={styles.eyebrow}>{d.about_short.eyebrow}</span>
+          <h2 className={styles.aboutShortTitle}>{d.about_short.text}</h2>
+          <div className={styles.statsRow}>
+            {[
+              [d.about_short.stat1_num, d.about_short.stat1_label],
+              [d.about_short.stat2_num, d.about_short.stat2_label],
+              [d.about_short.stat3_num, d.about_short.stat3_label],
+            ].map(([num, label]) => (
+              <div key={label} className={styles.statItem}>
+                <span className={styles.statNum}>{num}</span>
+                <span className={styles.statLabel}>{label}</span>
+              </div>
             ))}
           </div>
+          <Link href={`${base}/o-nas`} className={styles.textLink}>
+            {d.about_short.cta} →
+          </Link>
         </div>
       </section>
 
-      <section className={styles.about} id="o-nas">
-        <div className={styles.aboutInner}>
-          <div className={styles.aboutLeft}>
-            <div className={styles.aboutTag}>{dict.about.tag}</div>
-            <h2 className={styles.aboutTitle}>
-              {dict.about.title}<br /><em>{dict.about.title_em}</em>
-            </h2>
-            <div className={styles.accentLine} />
-          </div>
-          <div className={styles.aboutRight}>
-            <p className={styles.aboutText}>{dict.about.text}</p>
-            <div className={styles.stats}>
-              {[
-                [dict.about.stat1_num, dict.about.stat1_label],
-                [dict.about.stat2_num, dict.about.stat2_label],
-                [dict.about.stat3_num, dict.about.stat3_label],
-              ].map(([num, label]) => (
-                <div key={label} className={styles.stat}>
-                  <span className={styles.statNum}>{num}</span>
-                  <span className={styles.statLabel}>{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* KOMPETENCJE */}
+      <section className={styles.competences}>
+        <div className={styles.sectionCenter}>
+          <span className={styles.eyebrow}>{d.competences.eyebrow}</span>
+          <h2 className={styles.sectionTitle}>{d.competences.title}</h2>
         </div>
-      </section>
-
-      <section className={styles.team} id="zespol">
-        <div className={styles.teamHeader}>
-          <span className={styles.teamLabel}>{dict.team.label}</span>
-          <h2 className={styles.teamTitle}>{dict.team.title}</h2>
-        </div>
-        <div className={styles.teamGrid}>
-          {team.map(member => (
-            <div key={member.id} className={styles.teamCard}>
-              <div className={styles.teamPhoto}>
-                <Image src={member.photo} alt={member.name} fill className={styles.teamImg} />
-              </div>
-              <div className={styles.teamInfo}>
-                <p className={styles.teamName}>{member.name}</p>
-                <p className={styles.teamRole}>{member.role}</p>
-              </div>
+        <div className={styles.competencesGrid}>
+          {[
+            [d.competences.item1_title, d.competences.item1_text],
+            [d.competences.item2_title, d.competences.item2_text],
+            [d.competences.item3_title, d.competences.item3_text],
+            [d.competences.item4_title, d.competences.item4_text],
+          ].map(([title, text]) => (
+            <div key={title} className={styles.competenceCard}>
+              <h3 className={styles.competenceTitle}>{title}</h3>
+              <p className={styles.competenceText}>{text}</p>
             </div>
           ))}
         </div>
       </section>
 
+      {/* JAK PRACUJEMY */}
+      <section className={styles.process}>
+        <div className={styles.sectionCenter}>
+          <span className={styles.eyebrow}>{d.process.eyebrow}</span>
+          <h2 className={styles.sectionTitle}>{d.process.title}</h2>
+        </div>
+        <div className={styles.processGrid}>
+          {[
+            [d.process.step1_num, d.process.step1_title, d.process.step1_text],
+            [d.process.step2_num, d.process.step2_title, d.process.step2_text],
+            [d.process.step3_num, d.process.step3_title, d.process.step3_text],
+            [d.process.step4_num, d.process.step4_title, d.process.step4_text],
+          ].map(([num, title, text]) => (
+            <div key={num} className={styles.processStep}>
+              <span className={styles.processNum}>{num}</span>
+              <h3 className={styles.processTitle}>{title}</h3>
+              <p className={styles.processText}>{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PROJEKTY */}
+      <section className={styles.projects} id="projekty">
+        <div className={styles.projectsHeader}>
+          <div>
+            <span className={styles.eyebrowLeft}>{d.projects.eyebrow}</span>
+            <h2 className={styles.projectsTitle}>{d.projects.section_title}</h2>
+          </div>
+          <Link href={`${base}/projekty`} className={styles.seeAll}>{d.projects.see_all}</Link>
+        </div>
+        <div className={styles.projectsGrid3}>
+          {featured.slice(0, 3).map(p => (
+            <ProjectCard key={p.id} project={p} size="medium" lang={lang} grayscale />
+          ))}
+        </div>
+      </section>
+
+      {/* ZESPÓŁ */}
+      <section className={styles.team} id="zespol">
+        <div className={styles.sectionCenter}>
+          <span className={styles.eyebrow}>{d.team.eyebrow}</span>
+          <h2 className={styles.sectionTitle}>{d.team.title}</h2>
+        </div>
+        <div className={styles.teamGrid4}>
+          {team.map(member => (
+            <div key={member.id} className={styles.teamCard}>
+              <div className={styles.teamPhoto}>
+                <Image src={member.photo} alt={member.name} fill className={styles.teamImg} />
+              </div>
+              <h3 className={styles.teamName}>{member.name}</h3>
+              <p className={styles.teamRole}>{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WSPÓŁPRACA */}
+      <section className={styles.cooperation} id="wspolpraca">
+        <div className={styles.sectionCenter}>
+          <span className={styles.eyebrow}>{d.cooperation.eyebrow}</span>
+          <h2 className={styles.sectionTitle}>{d.cooperation.title}</h2>
+        </div>
+        <CooperationTabs dict={d.cooperation} />
+      </section>
+
+      {/* KONTAKT */}
       <section className={styles.contact} id="kontakt">
         <div className={styles.contactInner}>
-          <div className={styles.contactLeft}>
-            <h2 className={styles.contactTitle}>
-              {dict.contact.title.split('\n').map((line, i) => (
-                <span key={i}>{line}{i === 0 && <br />}</span>
-              ))}
-            </h2>
-            <div className={styles.contactDetails}>
-              <a href={`mailto:${studioInfo.email}`} className={styles.contactEmail}>{studioInfo.email}</a>
-              <p className={styles.contactPhone}>{studioInfo.phone}</p>
-              <p className={styles.contactAddress}>{studioInfo.address}</p>
+          <span className={styles.eyebrowDark}>{d.contact.eyebrow}</span>
+          <h2 className={styles.contactTitle}>{d.contact.title}</h2>
+          <div className={styles.contactBody}>
+            <div className={styles.contactInfo}>
+              <a href={`mailto:${studioInfo.email}`} className={styles.contactEmail}>
+                {studioInfo.email}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+              <div className={styles.contactDetails}>
+                <p>MT-Projekt Sp. z o.o.</p>
+                <p>{studioInfo.address}</p>
+                <p>{studioInfo.phone}</p>
+              </div>
             </div>
-          </div>
-          <div className={styles.contactRight}>
-            <ContactForm dict={dict.contact} />
+            <div className={styles.contactFormWrap}>
+              <ContactForm dict={d.contact} />
+            </div>
           </div>
         </div>
       </section>

@@ -18,15 +18,12 @@ export default function Footer({ lang, tagline }: Props) {
           <p className={styles.tagline}>{tagline}</p>
           <SocialIcons />
         </div>
-        <nav className={styles.links}>
-          <Link href={`${base}/projekty`}>Projekty</Link>
-          <Link href={`${base}/#o-nas`}>O nas</Link>
-          <Link href={`${base}/#zespol`}>Zespół</Link>
-          <Link href={`${base}/#kontakt`}>Kontakt</Link>
-        </nav>
+        <div className={styles.center}>
+          <p>© {year} MT-PROJEKT Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+        </div>
         <div className={styles.right}>
+          <strong>INFRASTRUKTURA DROGOWA</strong>
           <p>biuro@mt-p.pl</p>
-          <p>© {year} MT Projekt</p>
         </div>
       </div>
     </footer>

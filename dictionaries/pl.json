@@ -1,56 +1,91 @@
 {
   "nav": {
-    "start": "Start",
-    "projekty": "Projekty",
+    "strona_glowna": "Strona główna",
     "o_nas": "O nas",
+    "projekty": "Projekty",
+    "wspolpraca": "Współpraca",
+    "wspolpraca_krajowa": "Współpraca krajowa",
+    "wspolpraca_miedzynarodowa": "International Cooperation",
     "zespol": "Zespół",
-    "kontakt": "Kontakt"
+    "kontakt": "Kontakt",
+    "zapytanie": "Zapytanie ofertowe"
   },
   "hero": {
     "label": "Biuro projektowe — infrastruktura drogowa",
     "title": "Tworzymy infrastrukturę, która łączy ludzi",
     "sub": "Kompleksowe projekty inżynierskie dróg, mostów i infrastruktury towarzyszącej.",
     "btn": "Zobacz projekty",
+    "btn2": "Skontaktuj się z nami",
     "scroll": "Przewiń"
   },
-  "projects": {
-    "section_title": "Wybrane projekty",
-    "see_all": "Wszystkie projekty →"
-  },
-  "about": {
-    "tag": "O biurze",
-    "title": "Projektujemy z pasją",
-    "title_em": "i precyzją",
-    "text": "MT-Projekt Sp. z o.o. to polskie biuro projektowe z siedzibą w Grójcu. Zajmujemy się szerokim zakresem projektów inżynierskich — od projektowania dróg i ulic, przez mosty i wiadukty, po sieci sanitarne, teletechniczne i elektroenergetyczne. Nasze projekty realizujemy w oparciu o nowoczesne technologie, w tym drony i zaawansowane oprogramowanie CAD/BIM.",
+  "about_short": {
+    "eyebrow": "O nas",
+    "text": "Inżynieria infrastruktury drogowej z naciskiem na spójność techniczną i realia wykonawcze. Wspieramy inwestycje na każdym etapie.",
     "stat1_num": "15+",
-    "stat1_label": "lat doświadczenia",
+    "stat1_label": "Lat doświadczenia",
     "stat2_num": "200+",
-    "stat2_label": "zrealizowanych projektów",
+    "stat2_label": "Zrealizowanych projektów",
     "stat3_num": "10",
-    "stat3_label": "specjalizacji"
+    "stat3_label": "Obszarów specjalizacji",
+    "cta": "Dowiedz się więcej o nas"
   },
-  "services": {
-    "tag": "Usługi",
-    "title": "Zakres działalności",
-    "items": [
-      "Projektowanie dróg i ulic",
-      "Mosty i wiadukty",
-      "Geodezja i UAV",
-      "Geotechnika",
-      "Inżynieria ruchu i BRD",
-      "Sieci sanitarne",
-      "Infrastruktura teletechniczna",
-      "Nadzory inwestorskie",
-      "Ochrona środowiska",
-      "Infrastruktura elektroenergetyczna"
-    ]
+  "competences": {
+    "eyebrow": "Kompetencje",
+    "title": "Cztery filary naszej pracy projektowej.",
+    "item1_title": "Drogi i ulice",
+    "item1_text": "Drogi, skrzyżowania, zjazdy, chodniki i trasy rowerowe.",
+    "item2_title": "Obiekty inżynierskie",
+    "item2_text": "Mosty, przepusty i konstrukcje drogowe.",
+    "item3_title": "Odwodnienie i sieci",
+    "item3_text": "Kanalizacja deszczowa, rowy, wyloty i retencja.",
+    "item4_title": "Organizacja ruchu",
+    "item4_text": "Stała i czasowa organizacja ruchu oraz oznakowanie."
+  },
+  "process": {
+    "eyebrow": "Jak pracujemy",
+    "title": "Przejrzysty proces od analizy po wsparcie realizacji.",
+    "step1_num": "01",
+    "step1_title": "Analiza",
+    "step1_text": "Rozpoznajemy zakres inwestycji, uwarunkowania terenowe, formalne i techniczne.",
+    "step2_num": "02",
+    "step2_title": "Projektowanie",
+    "step2_text": "Opracowujemy rozwiązania zgodne z wymaganiami inwestora i realiami wykonawczymi.",
+    "step3_num": "03",
+    "step3_title": "Koordynacja",
+    "step3_text": "Uzgadniamy dokumentację z branżami, gestorami sieci i zarządcami dróg.",
+    "step4_num": "04",
+    "step4_title": "Wsparcie",
+    "step4_text": "Pomagamy przy uzgodnieniach, zmianach i etapie realizacji inwestycji."
+  },
+  "projects": {
+    "eyebrow": "Realizacje",
+    "section_title": "Projekty",
+    "see_all": "Zobacz wszystkie →"
   },
   "team": {
-    "label": "Zespół",
-    "title": "Nasi specjaliści"
+    "eyebrow": "Zespół",
+    "title": "Projektanci i specjaliści branżowi odpowiedzialni za jakość dokumentacji."
+  },
+  "cooperation": {
+    "eyebrow": "Współpraca",
+    "title": "Działamy lokalnie i globalnie.",
+    "tab_pl": "Współpraca krajowa",
+    "tab_en": "International Cooperation",
+    "pl_col1_title": "Dla kogo",
+    "pl_col1_items": ["Samorządy i zarządcy dróg", "Inwestorzy publiczni i prywatni", "Wykonawcy robót", "Biura projektowe i partnerzy branżowi"],
+    "pl_col2_title": "Zakres",
+    "pl_col2_items": ["Dokumentacje drogowe i mostowe", "Odwodnienie i pozwolenia wodnoprawne", "Sieci techniczne i kolizje", "ZRID, zgłoszenia i uzgodnienia"],
+    "pl_cta": "Przejdź do szczegółów współpracy krajowej",
+    "en_col1_title": "Who we support",
+    "en_col1_items": ["International engineering offices", "Infrastructure contractors", "Investors and developers", "General designers"],
+    "en_col2_title": "Scope of support",
+    "en_col2_items": ["Road design & traffic layouts", "Bridge engineering & structures", "CAD/BIM documentation", "Technical coordination"],
+    "en_cta": "View international cooperation details"
   },
   "contact": {
-    "title": "Skontaktuj się\nz nami",
+    "eyebrow": "Kontakt",
+    "title": "Przygotujemy zakres wsparcia dopasowany do Twojej inwestycji.",
+    "form_cta": "Formularz zapytania",
     "name": "Imię i nazwisko",
     "name_placeholder": "Jan Kowalski",
     "email": "E-mail",
@@ -77,5 +112,18 @@
     "title": "Projekty",
     "count_suffix": "realizacji",
     "categories": ["Wszystkie", "Drogi i skrzyżowania", "Mosty i wiadukty", "Inżynieria ruchu", "Infrastruktura towarzysząca"]
+  },
+  "o_nas_page": {
+    "hero_eyebrow": "O nas",
+    "hero_title": "Biuro projektowe skoncentrowane na praktycznych rozwiązaniach i koordynacji branżowej",
+    "hero_sub": "Przygotowujemy dokumentacje technicznie spójne i dostosowane do realiów wykonawczych.",
+    "timeline_eyebrow": "Doświadczenie i rozwój",
+    "competences_eyebrow": "Kompetencje projektowe",
+    "competences_title": "Pełen zakres opracowań branżowych.",
+    "process_eyebrow": "Jak pracujemy",
+    "process_title": "Przejrzysty proces projektowy.",
+    "cta_title": "Porozmawiajmy o Twoim projekcie",
+    "cta_sub": "Przygotujemy zakres wsparcia dopasowany do inwestycji, etapu dokumentacji i wymagań technicznych.",
+    "cta_btn": "Skontaktuj się z nami"
   }
 }

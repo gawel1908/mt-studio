@@ -47,6 +47,16 @@
   color: var(--fg);
 }
 
+.center {
+  display: flex;
+  color: var(--muted);
+  font-size: 10px;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: -25px;
+}
+
 .right {
   text-align: right;
   font-size: 13px;

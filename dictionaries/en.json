@@ -1,56 +1,91 @@
 {
   "nav": {
-    "start": "Home",
+    "strona_glowna": "Home",
+    "o_nas": "About us",
     "projekty": "Projects",
-    "o_nas": "About",
+    "wspolpraca": "Cooperation",
+    "wspolpraca_krajowa": "Domestic cooperation",
+    "wspolpraca_miedzynarodowa": "International Cooperation",
     "zespol": "Team",
-    "kontakt": "Contact"
+    "kontakt": "Contact",
+    "zapytanie": "Request a quote"
   },
   "hero": {
     "label": "Engineering design — road infrastructure",
     "title": "We build infrastructure that connects people",
     "sub": "Comprehensive engineering design of roads, bridges and accompanying infrastructure.",
     "btn": "View projects",
+    "btn2": "Contact us",
     "scroll": "Scroll"
   },
-  "projects": {
-    "section_title": "Selected projects",
-    "see_all": "All projects →"
-  },
-  "about": {
-    "tag": "About the studio",
-    "title": "We design with passion",
-    "title_em": "and precision",
-    "text": "MT-Projekt Sp. z o.o. is a Polish engineering design office based in Grójec. We handle a wide range of engineering projects — from road and street design to bridges, viaducts, sanitary networks, telecommunications and power infrastructure. We use modern technologies including UAVs and advanced CAD/BIM software.",
+  "about_short": {
+    "eyebrow": "About us",
+    "text": "Road infrastructure engineering with emphasis on technical consistency and construction realities. We support investments at every stage.",
     "stat1_num": "15+",
-    "stat1_label": "years of experience",
+    "stat1_label": "Years of experience",
     "stat2_num": "200+",
-    "stat2_label": "completed projects",
+    "stat2_label": "Completed projects",
     "stat3_num": "10",
-    "stat3_label": "specialisations"
+    "stat3_label": "Areas of specialisation",
+    "cta": "Learn more about us"
   },
-  "services": {
-    "tag": "Services",
-    "title": "Our expertise",
-    "items": [
-      "Road and street design",
-      "Bridges and viaducts",
-      "Surveying and UAV",
-      "Geotechnics",
-      "Traffic engineering and road safety",
-      "Sanitary networks",
-      "Telecommunications infrastructure",
-      "Investment supervision",
-      "Environmental protection",
-      "Power infrastructure"
-    ]
+  "competences": {
+    "eyebrow": "Competences",
+    "title": "Four pillars of our design work.",
+    "item1_title": "Roads & streets",
+    "item1_text": "Roads, intersections, driveways, pavements and cycle paths.",
+    "item2_title": "Engineering structures",
+    "item2_text": "Bridges, culverts and road structures.",
+    "item3_title": "Drainage & networks",
+    "item3_text": "Stormwater drainage, ditches, outlets and retention.",
+    "item4_title": "Traffic management",
+    "item4_text": "Permanent and temporary traffic organisation and signage."
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A clear process from analysis to construction support.",
+    "step1_num": "01",
+    "step1_title": "Analysis",
+    "step1_text": "We identify the investment scope, site conditions, and formal and technical requirements.",
+    "step2_num": "02",
+    "step2_title": "Design",
+    "step2_text": "We develop solutions consistent with investor requirements and construction realities.",
+    "step3_num": "03",
+    "step3_title": "Coordination",
+    "step3_text": "We coordinate documentation with disciplines, network operators and road administrators.",
+    "step4_num": "04",
+    "step4_title": "Support",
+    "step4_text": "We assist with approvals, changes and the construction phase."
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "section_title": "Projects",
+    "see_all": "View all →"
   },
   "team": {
-    "label": "Team",
-    "title": "Our specialists"
+    "eyebrow": "Team",
+    "title": "Design engineers and specialists responsible for documentation quality."
+  },
+  "cooperation": {
+    "eyebrow": "Cooperation",
+    "title": "We operate locally and globally.",
+    "tab_pl": "Domestic cooperation",
+    "tab_en": "International Cooperation",
+    "pl_col1_title": "Who we work with",
+    "pl_col1_items": ["Local governments and road administrators", "Public and private investors", "Construction contractors", "Engineering offices and sector partners"],
+    "pl_col2_title": "Scope",
+    "pl_col2_items": ["Road and bridge documentation", "Drainage and water permits", "Technical networks and conflicts", "ZRID, notifications and approvals"],
+    "pl_cta": "Go to domestic cooperation details",
+    "en_col1_title": "Who we support",
+    "en_col1_items": ["International engineering offices", "Infrastructure contractors", "Investors and developers", "General designers"],
+    "en_col2_title": "Scope of support",
+    "en_col2_items": ["Road design & traffic layouts", "Bridge engineering & structures", "CAD/BIM documentation", "Technical coordination"],
+    "en_cta": "View international cooperation details"
   },
   "contact": {
-    "title": "Get in touch\nwith us",
+    "eyebrow": "Contact",
+    "title": "We will prepare a scope of support tailored to your investment.",
+    "form_cta": "Enquiry form",
     "name": "Full name",
     "name_placeholder": "John Smith",
     "email": "E-mail",
@@ -77,5 +112,18 @@
     "title": "Projects",
     "count_suffix": "projects",
     "categories": ["All", "Roads & intersections", "Bridges & viaducts", "Traffic engineering", "Infrastructure"]
+  },
+  "o_nas_page": {
+    "hero_eyebrow": "About us",
+    "hero_title": "An engineering office focused on practical solutions and multi-discipline coordination",
+    "hero_sub": "We prepare technically consistent documentation adapted to construction realities.",
+    "timeline_eyebrow": "Experience & growth",
+    "competences_eyebrow": "Design competences",
+    "competences_title": "Full range of discipline documentation.",
+    "process_eyebrow": "How we work",
+    "process_title": "A clear design process.",
+    "cta_title": "Let's talk about your project",
+    "cta_sub": "We will prepare a support scope tailored to the investment, documentation stage and technical requirements.",
+    "cta_btn": "Contact us"
   }
 }
