@@ -1,17 +1,16 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
-const SECTIONS = ["o-nas", "zespol", "wspolpraca", "kontakt"];
+const SECTIONS = ["zespol", "wspolpraca", "kontakt"];
 
 interface NavDict {
   strona_glowna: string;
   o_nas: string;
   projekty: string;
   wspolpraca: string;
-  wspolpraca_krajowa: string;
   wspolpraca_miedzynarodowa: string;
   zespol: string;
   kontakt: string;
@@ -26,10 +25,8 @@ interface Props {
 export default function Navbar({ lang, dict }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const switchPath =
     lang === "en"
@@ -43,16 +40,6 @@ export default function Navbar({ lang, dict }: Props) {
   }, []);
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
-
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, []);
 
   useEffect(() => {
     const base = lang === "en" ? "/en" : "";
@@ -96,28 +83,9 @@ export default function Navbar({ lang, dict }: Props) {
             {dict.projekty}
           </Link>
 
-          {/* Dropdown Współpraca */}
-          <div className={styles.dropdown} ref={dropdownRef}>
-            <button
-              className={`${styles.dropdownToggle} ${cls(activeSection === "wspolpraca")}`}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              {dict.wspolpraca}
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            {dropdownOpen && (
-              <div className={styles.dropdownMenu}>
-                <a href={`${base}/#wspolpraca`} className={styles.dropdownItem} onClick={() => setDropdownOpen(false)}>
-                  {dict.wspolpraca_krajowa}
-                </a>
-                <a href={`${base}/#wspolpraca`} className={styles.dropdownItem} onClick={() => setDropdownOpen(false)}>
-                  {dict.wspolpraca_miedzynarodowa}
-                </a>
-              </div>
-            )}
-          </div>
+          <a href={`${base}/#wspolpraca`} className={cls(activeSection === "wspolpraca")}>
+            {dict.wspolpraca}
+          </a>
 
           <Link href={`${base}/#zespol`} className={cls(activeSection === "zespol")}>
             {dict.zespol}

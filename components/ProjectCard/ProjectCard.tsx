@@ -9,12 +9,13 @@ interface Props {
   size?: 'large' | 'medium' | 'small'
   lang?: string
   grayscale?: boolean
+  imageOnly?: boolean
 }
 
-export default function ProjectCard({ project, size = 'medium', lang = 'pl', grayscale = false }: Props) {
+export default function ProjectCard({ project, size = 'medium', lang = 'pl', grayscale = false, imageOnly = false }: Props) {
   const base = lang === 'en' ? '/en' : ''
   return (
-    <Link href={`${base}/projekty/${project.slug}`} className={`${styles.card} ${grayscale ? styles.grayscale : ''}`}>
+    <Link href={`${base}/projekty/${project.slug}`} className={`${styles.card} ${grayscale ? styles.grayscale : ''} ${imageOnly ? styles.imageOnlyCard : ''}`}>
       <div className={styles.imageWrap}>
         <Image
           src={project.coverImage}
@@ -25,14 +26,16 @@ export default function ProjectCard({ project, size = 'medium', lang = 'pl', gra
         />
         <div className={styles.overlay} />
       </div>
-      <div className={styles.meta}>
-        <div className={styles.metaTop}>
-          <span className={styles.category}>{project.category}</span>
-          <span className={styles.year}>{project.year}</span>
+      {!imageOnly && (
+        <div className={styles.meta}>
+          <div className={styles.metaTop}>
+            <span className={styles.category}>{project.category}</span>
+            <span className={styles.year}>{project.year}</span>
+          </div>
+          <h3 className={styles.title}>{project.title}</h3>
+          <span className={styles.location}>{project.location}</span>
         </div>
-        <h3 className={styles.title}>{project.title}</h3>
-        <span className={styles.location}>{project.location}</span>
-      </div>
+      )}
     </Link>
   )
 }

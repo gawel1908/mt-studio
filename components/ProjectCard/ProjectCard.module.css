@@ -16,6 +16,15 @@
   background: #e8e8e8;
 }
 
+.imageOnlyCard {
+  height: 100%;
+}
+
+.imageOnlyCard .imageWrap {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
 .image {
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;

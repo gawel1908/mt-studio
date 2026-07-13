@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Timeline from '@/components/Timeline/Timeline'
 import { Dictionary } from '@/lib/dictionaries'
@@ -37,26 +38,20 @@ export default function ONasPage({ lang, dict }: Props) {
     <>
       {/* HERO */}
       <section className={styles.hero}>
+        <div className={styles.heroImageWrap}>
+          <Image
+            src="/images/heromain.png"
+            alt={d.hero_title}
+            fill
+            priority
+            className={styles.heroImage}
+          />
+          <div className={styles.heroOverlay} />
+        </div>
         <div className={styles.heroInner}>
-          <span className={styles.eyebrow}>{d.hero_eyebrow}</span>
+          <span className={styles.heroEyebrow}>{d.hero_eyebrow}</span>
           <h1 className={styles.heroTitle}>{d.hero_title}</h1>
           <p className={styles.heroSub}>{d.hero_sub}</p>
-        </div>
-      </section>
-
-      {/* STATYSTYKI */}
-      <section className={styles.stats}>
-        <div className={styles.statsInner}>
-          {[
-            [(dict as any).about_short.stat1_num, (dict as any).about_short.stat1_label],
-            [(dict as any).about_short.stat2_num, (dict as any).about_short.stat2_label],
-            [(dict as any).about_short.stat3_num, (dict as any).about_short.stat3_label],
-          ].map(([num, label]) => (
-            <div key={label} className={styles.statItem}>
-              <span className={styles.statNum}>{num}</span>
-              <span className={styles.statLabel}>{label}</span>
-            </div>
-          ))}
         </div>
       </section>
 

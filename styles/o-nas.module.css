@@ -1,13 +1,23 @@
 .hero {
-  border-bottom: 1px solid #e5e5e5;
+  position: relative;
   height: 100vh;
   min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.heroImageWrap { position: absolute; inset: 0; }
+.heroImage { object-fit: cover; }
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.25) 100%);
 }
 .heroInner {
+  position: relative;
+  z-index: 2;
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
@@ -20,6 +30,15 @@
   margin-bottom: 1.5rem;
   text-align: center;
 }
+.heroEyebrow {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--accent-light);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 .heroTitle {
   font-size: clamp(2rem, 4vw, 3.8rem);
   font-weight: 400;
@@ -29,39 +48,15 @@
   max-width: 22ch;
   margin-left: auto;
   margin-right: auto;
-  color: var(--accent);
+  color: #fff;
 }
 .heroSub {
   font-size: 1.1rem;
-  color: #6b6b6b;
+  color: rgba(255,255,255,0.8);
   max-width: 48ch;
   line-height: 1.6;
   margin: 0 auto;
 }
-
-.stats {
-  border-bottom: 1px solid #e5e5e5;
-  background: #fafafa;
-}
-.statsInner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  text-align: center;
-}
-.statItem { border-top: 1px solid #e5e5e5; padding-top: 2rem; }
-.statNum {
-  display: block;
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.statLabel { font-size: 0.85rem; color: #6b6b6b; }
 
 .timelineSection { border-bottom: 1px solid #e5e5e5; }
 .sectionHeader { text-align: center; padding: 5rem 2rem 3rem; }
@@ -154,7 +149,6 @@
   .processGrid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .statsInner { grid-template-columns: 1fr; }
   .competencesGrid { grid-template-columns: 1fr; }
   .processGrid { grid-template-columns: 1fr; }
 }

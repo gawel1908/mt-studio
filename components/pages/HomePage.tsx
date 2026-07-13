@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { studioInfo } from '@/lib/mockData'
-import { getFeaturedProjects, getTeam } from '@/lib/sanity'
+import { getAllProjects, getTeam } from '@/lib/sanity'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import ContactForm from '@/components/ContactForm/ContactForm'
 import CooperationTabs from '@/components/CooperationTabs/CooperationTabs'
@@ -31,7 +31,7 @@ const timelineItems = [
 ]
 
 export default async function HomePage({ lang, dict }: Props) {
-  const featured = await getFeaturedProjects(lang)
+  const projects = await getAllProjects(lang)
   const team = await getTeam(lang)
   const base = lang === 'en' ? '/en' : ''
   const d = dict as any
@@ -82,50 +82,6 @@ export default async function HomePage({ lang, dict }: Props) {
         </div>
       </div>
 
-      {/* O NAS (short) */}
-      <section className={styles.aboutShort} id="o-nas">
-        <div className={styles.aboutShortInner}>
-          <span className={styles.eyebrow}>{d.about_short.eyebrow}</span>
-          <h2 className={styles.aboutShortTitle}>{d.about_short.text}</h2>
-          <div className={styles.statsRow}>
-            {[
-              [d.about_short.stat1_num, d.about_short.stat1_label],
-              [d.about_short.stat2_num, d.about_short.stat2_label],
-              [d.about_short.stat3_num, d.about_short.stat3_label],
-            ].map(([num, label]) => (
-              <div key={label} className={styles.statItem}>
-                <span className={styles.statNum}>{num}</span>
-                <span className={styles.statLabel}>{label}</span>
-              </div>
-            ))}
-          </div>
-          <Link href={`${base}/o-nas`} className={styles.textLink}>
-            {d.about_short.cta} →
-          </Link>
-        </div>
-      </section>
-
-      {/* KOMPETENCJE */}
-      <section className={styles.competences}>
-        <div className={styles.sectionCenter}>
-          <span className={styles.eyebrow}>{d.competences.eyebrow}</span>
-          <h2 className={styles.sectionTitle}>{d.competences.title}</h2>
-        </div>
-        <div className={styles.competencesGrid}>
-          {[
-            [d.competences.item1_title, d.competences.item1_text],
-            [d.competences.item2_title, d.competences.item2_text],
-            [d.competences.item3_title, d.competences.item3_text],
-            [d.competences.item4_title, d.competences.item4_text],
-          ].map(([title, text]) => (
-            <div key={title} className={styles.competenceCard}>
-              <h3 className={styles.competenceTitle}>{title}</h3>
-              <p className={styles.competenceText}>{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* JAK PRACUJEMY */}
       <section className={styles.process}>
         <div className={styles.sectionCenter}>
@@ -158,7 +114,7 @@ export default async function HomePage({ lang, dict }: Props) {
           <Link href={`${base}/projekty`} className={styles.seeAll}>{d.projects.see_all}</Link>
         </div>
         <div className={styles.projectsGrid3}>
-          {featured.slice(0, 3).map(p => (
+          {projects.slice(0, 9).map(p => (
             <ProjectCard key={p.id} project={p} size="medium" lang={lang} grayscale />
           ))}
         </div>

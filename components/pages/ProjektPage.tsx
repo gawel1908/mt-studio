@@ -22,58 +22,57 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
   const currentIdx = all.findIndex(p => p.slug === project.slug)
   const next = all[(currentIdx + 1) % all.length]
   const d = dict.project_page
+  const gallery = (project.images ?? []).slice(0, 2)
 
   return (
     <article className={styles.page}>
-      <div className={styles.hero}>
-        <Image src={project.coverImage} alt={project.title} fill priority className={styles.heroImg} />
-        <div className={styles.heroOverlay} />
-        <div className={styles.heroBack}>
-          <Link href={`${base}/projekty`}>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M13 4L7 10L13 16" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            {d.back}
-          </Link>
+      <div className={styles.header}>
+        <Link href={`${base}/projekty`} className={styles.back}>
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+            <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          {d.back}
+        </Link>
+        <span className={styles.category}>{project.category}</span>
+        <h1 className={styles.title}>{project.title}</h1>
+        <div className={styles.meta}>
+          <div className={styles.metaItem}>
+            <span className={styles.metaLabel}>{d.year}</span>
+            <span className={styles.metaVal}>{project.year}</span>
+          </div>
+          <div className={styles.metaItem}>
+            <span className={styles.metaLabel}>{d.location}</span>
+            <span className={styles.metaVal}>{project.location}</span>
+          </div>
+          {project.area && (
+            <div className={styles.metaItem}>
+              <span className={styles.metaLabel}>{d.area}</span>
+              <span className={styles.metaVal}>{project.area}</span>
+            </div>
+          )}
+          <div className={styles.metaItem}>
+            <span className={styles.metaLabel}>{d.type}</span>
+            <span className={styles.metaVal}>{project.category}</span>
+          </div>
         </div>
       </div>
 
-      <div className={styles.infoRow}>
-        <div className={styles.infoLeft}>
-          <span className={styles.category}>{project.category}</span>
-          <h1 className={styles.title}>{project.title}</h1>
-        </div>
-        <div className={styles.infoRight}>
-          <div className={styles.meta}>
-            <div className={styles.metaItem}>
-              <span className={styles.metaLabel}>{d.year}</span>
-              <span className={styles.metaVal}>{project.year}</span>
-            </div>
-            <div className={styles.metaItem}>
-              <span className={styles.metaLabel}>{d.location}</span>
-              <span className={styles.metaVal}>{project.location}</span>
-            </div>
-            {project.area && (
-              <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>{d.area}</span>
-                <span className={styles.metaVal}>{project.area}</span>
-              </div>
-            )}
-            <div className={styles.metaItem}>
-              <span className={styles.metaLabel}>{d.type}</span>
-              <span className={styles.metaVal}>{project.category}</span>
-            </div>
-          </div>
-          <p className={styles.description}>{project.description}</p>
-        </div>
+      <div className={styles.heroFull}>
+        <Image src={project.coverImage} alt={project.title} fill priority sizes="100vw" className={styles.heroFullImg} />
       </div>
 
-      <div className={styles.gallery}>
-        {project.images?.map((img, i) => (
-          <div key={i} className={`${styles.galleryItem} ${i === 0 ? styles.galleryFull : ''}`}>
-            <Image src={img} alt={`${project.title} — ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 90vw" className={styles.galleryImg} />
-          </div>
-        ))}
+      {gallery.length > 0 && (
+        <div className={styles.gallery2}>
+          {gallery.map((img, i) => (
+            <div key={i} className={styles.galleryItem}>
+              <Image src={img} alt={`${project.title} — ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className={styles.galleryImg} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className={styles.content}>
+        <p className={styles.description}>{project.description}</p>
       </div>
 
       {next && (
