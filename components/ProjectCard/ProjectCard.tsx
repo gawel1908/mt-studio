@@ -28,10 +28,7 @@ export default function ProjectCard({ project, size = 'medium', lang = 'pl', gra
       </div>
       {!imageOnly && (
         <div className={styles.meta}>
-          <div className={styles.metaTop}>
-            <span className={styles.category}>{project.category}</span>
-            <span className={styles.year}>{project.year}</span>
-          </div>
+          <span className={styles.year}>{project.year}</span>
           <h3 className={styles.title}>{project.title}</h3>
           <span className={styles.location}>{project.location}</span>
         </div>

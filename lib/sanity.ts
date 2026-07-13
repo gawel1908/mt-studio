@@ -24,7 +24,6 @@ const projectFields = (lang: string) => {
     "id": _id,
     "slug": slug.current,
     "title": coalesce(title_${l}, title_pl),
-    "category": coalesce(category_${l}, category_pl),
     year,
     location,
     area,

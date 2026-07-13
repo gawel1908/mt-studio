@@ -33,7 +33,6 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
           </svg>
           {d.back}
         </Link>
-        <span className={styles.category}>{project.category}</span>
         <h1 className={styles.title}>{project.title}</h1>
         <div className={styles.meta}>
           <div className={styles.metaItem}>
@@ -50,10 +49,6 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
               <span className={styles.metaVal}>{project.area}</span>
             </div>
           )}
-          <div className={styles.metaItem}>
-            <span className={styles.metaLabel}>{d.type}</span>
-            <span className={styles.metaVal}>{project.category}</span>
-          </div>
         </div>
       </div>
 

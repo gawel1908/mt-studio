@@ -8,8 +8,6 @@ export const projectSchema = defineType({
     defineField({ name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title_pl' }, validation: r => r.required() }),
     defineField({ name: 'title_pl', title: 'Tytuł (PL)', type: 'string', validation: r => r.required() }),
     defineField({ name: 'title_en', title: 'Tytuł (EN)', type: 'string' }),
-    defineField({ name: 'category_pl', title: 'Kategoria (PL)', type: 'string' }),
-    defineField({ name: 'category_en', title: 'Kategoria (EN)', type: 'string' }),
     defineField({ name: 'year', title: 'Rok', type: 'number' }),
     defineField({ name: 'location', title: 'Lokalizacja', type: 'string' }),
     defineField({ name: 'area', title: 'Długość / Rozpiętość', type: 'string' }),

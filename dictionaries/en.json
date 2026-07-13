@@ -98,13 +98,11 @@
     "year": "Year",
     "location": "Location",
     "area": "Length / Span",
-    "type": "Type",
     "next": "Next project"
   },
   "projects_page": {
     "title": "Projects",
-    "count_suffix": "projects",
-    "categories": ["All", "Roads & intersections", "Bridges & viaducts", "Traffic engineering", "Infrastructure"]
+    "count_suffix": "projects"
   },
   "o_nas_page": {
     "hero_eyebrow": "About us",

@@ -98,13 +98,11 @@
     "year": "Rok",
     "location": "Lokalizacja",
     "area": "Długość / Rozpiętość",
-    "type": "Typ",
     "next": "Następny projekt"
   },
   "projects_page": {
     "title": "Projekty",
-    "count_suffix": "realizacji",
-    "categories": ["Wszystkie", "Drogi i skrzyżowania", "Mosty i wiadukty", "Inżynieria ruchu", "Infrastruktura towarzysząca"]
+    "count_suffix": "realizacji"
   },
   "o_nas_page": {
     "hero_eyebrow": "O nas",
