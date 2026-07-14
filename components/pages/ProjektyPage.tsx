@@ -14,14 +14,11 @@ export default async function ProjektyPage({ lang, dict }: Props) {
   return (
     <div className={styles.page}>
       <div className={styles.grid}>
-        {projects.map((project, i) => {
-          const pattern = i % 4
-          return (
-            <div key={project.id} className={`${styles.gridItem} ${styles[`item${pattern}`]}`}>
-              <ProjectCard project={project} lang={lang} imageOnly />
-            </div>
-          )
-        })}
+        {projects.map(project => (
+          <div key={project.id} className={styles.gridItem}>
+            <ProjectCard project={project} lang={lang} imageOnly />
+          </div>
+        ))}
       </div>
     </div>
   )

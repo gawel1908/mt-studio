@@ -2,12 +2,8 @@
   display: block;
   text-decoration: none;
   color: var(--charcoal);
-  background: #fff;
   overflow: hidden;
-  transition: background 0.2s;
 }
-
-.card:hover { background: #fafafa; }
 
 .imageWrap {
   position: relative;
@@ -35,22 +31,27 @@
 .grayscale .image { filter: grayscale(100%); }
 .grayscale:hover .image { filter: grayscale(0%); }
 
-.overlay {
+.gradientOverlay {
   position: absolute;
   inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0) 75%);
   pointer-events: none;
 }
 
-.meta {
-  padding: 1.5rem 2rem;
-  border-top: 1px solid #e5e5e5;
+.metaOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 1.75rem;
+  z-index: 2;
 }
 
 .year {
   display: block;
   font-size: 0.75rem;
-  color: #6b6b6b;
-  margin-bottom: 0.5rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 0.4rem;
 }
 
 .title {
@@ -59,11 +60,12 @@
   letter-spacing: -0.01em;
   margin-bottom: 0.25rem;
   line-height: 1.3;
+  color: #fff;
 }
 
 .location {
   font-size: 0.8rem;
-  color: #6b6b6b;
+  color: rgba(255,255,255,0.75);
 }
 
 /* Legacy size classes — kept for compatibility */

@@ -82,26 +82,28 @@ export default async function HomePage({ lang, dict }: Props) {
         </div>
       </div>
 
-      {/* JAK PRACUJEMY */}
-      <section className={styles.process}>
+      {/* JAK PRACUJEMY (skrót) */}
+      <section className={styles.processCompact}>
         <div className={styles.sectionCenter}>
           <span className={styles.eyebrow}>{d.process.eyebrow}</span>
           <h2 className={styles.sectionTitle}>{d.process.title}</h2>
         </div>
-        <div className={styles.processGrid}>
+        <div className={styles.processCompactRow}>
           {[
-            [d.process.step1_num, d.process.step1_title, d.process.step1_text],
-            [d.process.step2_num, d.process.step2_title, d.process.step2_text],
-            [d.process.step3_num, d.process.step3_title, d.process.step3_text],
-            [d.process.step4_num, d.process.step4_title, d.process.step4_text],
-          ].map(([num, title, text]) => (
-            <div key={num} className={styles.processStep}>
+            [d.process.step1_num, d.process.step1_title],
+            [d.process.step2_num, d.process.step2_title],
+            [d.process.step3_num, d.process.step3_title],
+            [d.process.step4_num, d.process.step4_title],
+          ].map(([num, title]) => (
+            <div key={num} className={styles.processCompactStep}>
               <span className={styles.processNum}>{num}</span>
-              <h3 className={styles.processTitle}>{title}</h3>
-              <p className={styles.processText}>{text}</p>
+              <h3 className={styles.processCompactTitle}>{title}</h3>
             </div>
           ))}
         </div>
+        <Link href={`${base}/o-nas`} className={styles.textLink}>
+          {d.process.more ?? (lang === 'en' ? 'Learn more about how we work →' : 'Dowiedz się więcej o naszym procesie →')}
+        </Link>
       </section>
 
       {/* PROJEKTY */}

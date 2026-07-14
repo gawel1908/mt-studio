@@ -22,11 +22,14 @@ const timelineItems = [
 
 const competences = [
   { title_pl: 'Drogi i ulice', title_en: 'Roads & streets', text_pl: 'drogi, skrzyżowania, zjazdy, chodniki i trasy rowerowe', text_en: 'roads, intersections, driveways, pavements and cycle paths' },
-  { title_pl: 'Obiekty inżynierskie', title_en: 'Engineering structures', text_pl: 'mosty, przepusty i konstrukcje drogowe', text_en: 'bridges, culverts and road structures' },
-  { title_pl: 'Odwodnienie', title_en: 'Drainage', text_pl: 'kanalizacja deszczowa, rowy, wyloty i retencja', text_en: 'stormwater drainage, ditches, outlets and retention' },
-  { title_pl: 'Sieci techniczne', title_en: 'Technical networks', text_pl: 'koordynacja infrastruktury sanitarnej, elektroenergetycznej i teletechnicznej', text_en: 'coordination of sanitary, power and telecoms infrastructure' },
+  { title_pl: 'Obiekty inżynierskie', title_en: 'Engineering structures', text_pl: 'projektowanie obiektów inżynierskich i konstrukcji drogowych', text_en: 'design of engineering structures and road elements' },
+  { title_pl: 'Odwodnienie i sieci', title_en: 'Drainage & networks', text_pl: 'kanalizacja deszczowa, rowy, wyloty, retencja i sieci techniczne', text_en: 'stormwater drainage, ditches, outlets, retention and utility networks' },
   { title_pl: 'Organizacja ruchu', title_en: 'Traffic management', text_pl: 'stała i czasowa organizacja ruchu oraz oznakowanie', text_en: 'permanent and temporary traffic organisation and signage' },
-  { title_pl: 'Procedury i uzgodnienia', title_en: 'Procedures & approvals', text_pl: 'ZRID, zgłoszenia, pozwolenia, opinie i narady koordynacyjne', text_en: 'ZRID, notifications, permits, opinions and coordination meetings' },
+  { title_pl: 'Mosty i przepusty', title_en: 'Bridges & culverts', text_pl: 'projektowanie mostów, wiaduktów i przepustów drogowych', text_en: 'design of bridges, viaducts and road culverts' },
+  { title_pl: 'BIM / CAD', title_en: 'BIM / CAD', text_pl: 'dokumentacja projektowa w technologii BIM i CAD', text_en: 'design documentation in BIM and CAD technology' },
+  { title_pl: 'Geotechnika', title_en: 'Geotechnics', text_pl: 'badania i opracowania geotechniczne dla inwestycji drogowych', text_en: 'geotechnical surveys and studies for road investments' },
+  { title_pl: 'Nadzory inwestorskie', title_en: 'Investment supervision', text_pl: 'nadzór inwestorski i wsparcie na etapie realizacji', text_en: 'site supervision and support during execution' },
+  { title_pl: 'Infrastruktura techniczna', title_en: 'Technical infrastructure', text_pl: 'koordynacja infrastruktury sanitarnej, elektroenergetycznej i teletechnicznej', text_en: 'coordination of sanitary, power and telecoms infrastructure' },
 ]
 
 export default function ONasPage({ lang, dict }: Props) {

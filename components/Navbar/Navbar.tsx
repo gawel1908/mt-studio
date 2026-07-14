@@ -51,7 +51,12 @@ export default function Navbar({ lang, dict }: Props) {
       const el = document.getElementById(id);
       if (!el) return;
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        ([entry]) => {
+          setActiveSection((prev) => {
+            if (entry.isIntersecting) return id;
+            return prev === id ? null : prev;
+          });
+        },
         { rootMargin: "-40% 0px -50% 0px" }
       );
       obs.observe(el);

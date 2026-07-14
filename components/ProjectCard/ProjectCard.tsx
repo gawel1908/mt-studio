@@ -24,15 +24,17 @@ export default function ProjectCard({ project, size = 'medium', lang = 'pl', gra
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={styles.image}
         />
-        <div className={styles.overlay} />
+        {!imageOnly && (
+          <>
+            <div className={styles.gradientOverlay} />
+            <div className={styles.metaOverlay}>
+              <span className={styles.year}>{project.year}</span>
+              <h3 className={styles.title}>{project.title}</h3>
+              <span className={styles.location}>{project.location}</span>
+            </div>
+          </>
+        )}
       </div>
-      {!imageOnly && (
-        <div className={styles.meta}>
-          <span className={styles.year}>{project.year}</span>
-          <h3 className={styles.title}>{project.title}</h3>
-          <span className={styles.location}>{project.location}</span>
-        </div>
-      )}
     </Link>
   )
 }
