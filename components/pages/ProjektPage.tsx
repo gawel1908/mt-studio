@@ -34,22 +34,14 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
           {d.back}
         </Link>
         <h1 className={styles.title}>{project.title}</h1>
-        <div className={styles.meta}>
-          <div className={styles.metaItem}>
-            <span className={styles.metaLabel}>{d.year}</span>
-            <span className={styles.metaVal}>{project.year}</span>
-          </div>
-          <div className={styles.metaItem}>
-            <span className={styles.metaLabel}>{d.location}</span>
-            <span className={styles.metaVal}>{project.location}</span>
-          </div>
-          {project.area && (
+        {project.area && (
+          <div className={styles.meta}>
             <div className={styles.metaItem}>
               <span className={styles.metaLabel}>{d.area}</span>
               <span className={styles.metaVal}>{project.area}</span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <div className={styles.heroFull}>
