@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { studioInfo } from '@/lib/mockData'
-import { getAllProjects, getTeam } from '@/lib/sanity'
+import { getFeaturedProjects, getTeam } from '@/lib/sanity'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import ContactForm from '@/components/ContactForm/ContactForm'
 import CooperationTabs from '@/components/CooperationTabs/CooperationTabs'
@@ -31,7 +31,7 @@ const timelineItems = [
 ]
 
 export default async function HomePage({ lang, dict }: Props) {
-  const projects = await getAllProjects(lang)
+  const projects = await getFeaturedProjects(lang)
   const team = await getTeam(lang)
   const base = lang === 'en' ? '/en' : ''
   const d = dict as any
