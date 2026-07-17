@@ -94,10 +94,16 @@
     "tagline": "Kompleksowe projekty inżynierskie"
   },
   "project_page": {
+    "home": "Strona główna",
     "back": "Projekty",
-    "year": "Rok",
+    "badge": "Zrealizowany projekt",
+    "year": "Rok realizacji",
     "location": "Lokalizacja",
     "area": "Długość / Rozpiętość",
+    "gallery_title": "Galeria realizacji",
+    "contact_title": "Planujesz podobną inwestycję?",
+    "contact_text": "Skontaktuj się z nami — przygotujemy rozwiązania dopasowane do Twoich potrzeb.",
+    "contact_cta": "Zapytanie ofertowe",
     "next": "Następny projekt"
   },
   "projects_page": {

@@ -11,6 +11,32 @@ interface Props {
   slug: string
 }
 
+function CalendarIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+    </svg>
+  )
+}
+
+function PinIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  )
+}
+
+function RoadIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 12h20M2 8h20M2 16h20M6 4v16M18 4v16" />
+    </svg>
+  )
+}
+
 export default async function ProjektPage({ lang, dict, slug }: Props) {
   const [project, all] = await Promise.all([
     getProjectBySlug(slug, lang),
@@ -22,46 +48,77 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
   const currentIdx = all.findIndex(p => p.slug === project.slug)
   const next = all[(currentIdx + 1) % all.length]
   const d = dict.project_page
-  const gallery = (project.images ?? []).slice(0, 2)
+  const gallery = project.images ?? []
+
+  const infoCards = [
+    project.year && { label: d.year, value: String(project.year), Icon: CalendarIcon },
+    project.location && { label: d.location, value: project.location, Icon: PinIcon },
+    project.area && { label: d.area, value: project.area, Icon: RoadIcon },
+  ].filter(Boolean) as { label: string; value: string; Icon: () => React.JSX.Element }[]
 
   return (
     <article className={styles.page}>
-      <div className={styles.header}>
-        <Link href={`${base}/projekty`} className={styles.back}>
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-            <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          {d.back}
-        </Link>
-        <h1 className={styles.title}>{project.title}</h1>
-        {project.area && (
-          <div className={styles.meta}>
-            <div className={styles.metaItem}>
-              <span className={styles.metaLabel}>{d.area}</span>
-              <span className={styles.metaVal}>{project.area}</span>
-            </div>
+      {/* HERO */}
+      <section className={styles.hero}>
+        <Image src={project.coverImage} alt={project.title} fill priority sizes="100vw" className={styles.heroImg} />
+        <div className={styles.heroOverlay} />
+        <div className={styles.heroInner}>
+          <div className={styles.breadcrumbs}>
+            <Link href={base || '/'}>{d.home}</Link>
+            <span> › </span>
+            <Link href={`${base}/projekty`}>{d.back}</Link>
+            <span> › </span>
+            <span className={styles.breadcrumbCurrent}>{project.title}</span>
           </div>
-        )}
-      </div>
-
-      <div className={styles.heroFull}>
-        <Image src={project.coverImage} alt={project.title} fill priority sizes="100vw" className={styles.heroFullImg} />
-      </div>
-
-      {gallery.length > 0 && (
-        <div className={styles.gallery2}>
-          {gallery.map((img, i) => (
-            <div key={i} className={styles.galleryItem}>
-              <Image src={img} alt={`${project.title} — ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className={styles.galleryImg} />
+          <span className={styles.heroBadge}>{d.badge}</span>
+          <h1 className={styles.heroTitle}>{project.title}</h1>
+          {project.description && <p className={styles.heroDesc}>{project.description}</p>}
+          {project.location && (
+            <div className={styles.heroLocation}>
+              <PinIcon />
+              {project.location}
             </div>
-          ))}
+          )}
         </div>
+      </section>
+
+      {/* INFO CARDS */}
+      {infoCards.length > 0 && (
+        <section className={styles.cardsSection}>
+          <div className={styles.cardsGrid}>
+            {infoCards.map(({ label, value, Icon }) => (
+              <div key={label} className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <Icon />
+                </div>
+                <h3>{value}</h3>
+                <p>{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       )}
 
-      <div className={styles.content}>
-        <p className={styles.description}>{project.description}</p>
-      </div>
+      {/* GALLERY */}
+      {gallery.length > 0 && (
+        <section className={styles.gallerySection}>
+          <div className={styles.galleryHeader}>
+            <div>
+              <h2>{d.gallery_title}</h2>
+              <div className={styles.greenLine} />
+            </div>
+          </div>
+          <div className={styles.galleryGrid}>
+            {gallery.map((img, i) => (
+              <div key={i} className={styles.galleryItem}>
+                <Image src={img} alt={`${project.title} — ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 25vw" className={styles.galleryImg} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
+      {/* NEXT PROJECT */}
       {next && (
         <div className={styles.nextProject}>
           <span className={styles.nextLabel}>{d.next}</span>
@@ -73,6 +130,27 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
           </Link>
         </div>
       )}
+
+      {/* CONTACT PANEL */}
+      <section className={styles.contactPanel}>
+        <div className={styles.contactFlex}>
+          <div className={styles.contactLeft}>
+            <div className={styles.contactIcon}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3>{d.contact_title}</h3>
+              <p>{d.contact_text}</p>
+            </div>
+          </div>
+          <a href={`${base}/#kontakt`} className={styles.contactBtn}>
+            {d.contact_cta}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+      </section>
     </article>
   )
 }

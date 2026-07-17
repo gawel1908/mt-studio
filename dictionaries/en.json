@@ -94,10 +94,16 @@
     "tagline": "Comprehensive engineering design"
   },
   "project_page": {
+    "home": "Home",
     "back": "Projects",
-    "year": "Year",
+    "badge": "Completed project",
+    "year": "Completion year",
     "location": "Location",
     "area": "Length / Span",
+    "gallery_title": "Project gallery",
+    "contact_title": "Planning a similar investment?",
+    "contact_text": "Get in touch — we'll prepare solutions tailored to your needs.",
+    "contact_cta": "Request a quote",
     "next": "Next project"
   },
   "projects_page": {
