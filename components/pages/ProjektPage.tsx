@@ -49,6 +49,7 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
   const next = all[(currentIdx + 1) % all.length]
   const d = dict.project_page
   const gallery = project.images ?? []
+  const hasTechSection = Boolean(project.pointCloudImage || project.terrainModelImage || project.existingStateImage)
 
   const infoCards = [
     project.year && { label: d.year, value: String(project.year), Icon: CalendarIcon },
@@ -95,6 +96,42 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
                 <p>{label}</p>
               </div>
             ))}
+          </div>
+        </section>
+      )}
+
+      {/* CHMURA PUNKTÓW */}
+      {hasTechSection && (
+        <section className={styles.techSection}>
+          <div className={styles.techInner}>
+            <div className={styles.techHeader}>
+              <span className={styles.techEyebrow}>{d.tech_eyebrow}</span>
+              <h2 className={styles.techTitle}>{d.tech_title}</h2>
+            </div>
+            <div className={styles.techGrid}>
+              {project.pointCloudImage && (
+                <div className={styles.techPanelLarge}>
+                  <span className={styles.panelCaption}>{d.tech_pointcloud}</span>
+                  <Image src={project.pointCloudImage} alt={d.tech_pointcloud} fill sizes="(max-width: 1024px) 100vw, 70vw" className={styles.techPanelImg} />
+                </div>
+              )}
+              {(project.terrainModelImage || project.existingStateImage) && (
+                <div className={styles.techPanelRow}>
+                  {project.terrainModelImage && (
+                    <div className={styles.techPanelSmall}>
+                      <span className={styles.panelCaption}>{d.tech_terrain}</span>
+                      <Image src={project.terrainModelImage} alt={d.tech_terrain} fill sizes="(max-width: 1024px) 50vw, 35vw" className={styles.techPanelImg} />
+                    </div>
+                  )}
+                  {project.existingStateImage && (
+                    <div className={styles.techPanelSmall}>
+                      <span className={styles.panelCaption}>{d.tech_existing}</span>
+                      <Image src={project.existingStateImage} alt={d.tech_existing} fill sizes="(max-width: 1024px) 50vw, 35vw" className={styles.techPanelImg} />
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </section>
       )}

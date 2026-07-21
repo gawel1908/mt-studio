@@ -15,6 +15,9 @@ export interface Project {
   description: string
   area?: string
   featured: boolean
+  pointCloudImage?: string
+  terrainModelImage?: string
+  existingStateImage?: string
 }
 
 export interface TeamMember {

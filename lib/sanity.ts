@@ -30,7 +30,10 @@ const projectFields = (lang: string) => {
     featured,
     "coverImage": coverImage.asset->url + "?w=1200&q=85",
     "images": images[].asset->url,
-    "description": coalesce(description_${l}, description_pl)
+    "description": coalesce(description_${l}, description_pl),
+    "pointCloudImage": pointCloudImage.asset->url,
+    "terrainModelImage": terrainModelImage.asset->url,
+    "existingStateImage": existingStateImage.asset->url
   `
 }
 
