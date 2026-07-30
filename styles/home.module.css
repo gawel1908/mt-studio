@@ -227,111 +227,81 @@
   opacity: 0.6;
 }
 
-/* ===== O NAS SHORT ===== */
-.aboutShort {
+/* ===== O NAS ===== */
+.about {
   border-bottom: 1px solid #e5e5e5;
-}
-.aboutShortInner {
-  max-width: 1400px;
-  margin: 0 auto;
   padding: 6rem 2rem;
-  text-align: center;
 }
-.aboutShortTitle {
-  font-size: clamp(1.4rem, 3vw, 2.5rem);
+.aboutHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto 3.5rem;
+  align-items: end;
+}
+.aboutEyebrow {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.aboutTitle {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.3;
-  max-width: 56ch;
-  margin: 0 auto 4rem;
+  line-height: 1.25;
   color: var(--fg);
 }
-.statsRow {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto 3rem;
-}
-.statItem {
-  border-top: 1px solid #e5e5e5;
-  padding-top: 2rem;
-}
-.statNum {
-  display: block;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.statLabel {
-  font-size: 0.85rem;
+.aboutHeaderText {
+  font-size: 0.95rem;
   color: #6b6b6b;
+  line-height: 1.7;
 }
-
-/* ===== KOMPETENCJE ===== */
-.competences {
-  background: #fafafa;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 6rem 2rem;
-}
-.competencesGrid {
+.aboutTilesGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: #e5e5e5;
   border: 1px solid #e5e5e5;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
 }
-.competenceCard {
-  background: #fafafa;
-  padding: 2.5rem;
+.aboutTile {
+  background: #fff;
+  padding: 2.25rem 2rem;
   transition: background 0.2s;
 }
-.competenceCard:hover {
-  background: #fff;
+.aboutTile:hover {
+  background: #fafafa;
 }
-.competenceTitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 0.75rem;
+.aboutTileIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.aboutTileNum {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-right: 0.5rem;
+}
+.aboutTileTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
 }
-.competenceText {
+.aboutTileText {
   font-size: 0.85rem;
   color: #6b6b6b;
   line-height: 1.6;
 }
-
-/* ===== JAK PRACUJEMY (skrót) ===== */
-.processCompact {
-  border-bottom: 1px solid #e5e5e5;
-  padding: 5rem 2rem;
+.aboutCtaRow {
   text-align: center;
-}
-.processCompactRow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto 2.5rem;
-}
-.processCompactStep {
-  border-top: 2px solid #0a0a0a;
-  padding-top: 1.25rem;
-  text-align: left;
-}
-.processNum {
-  display: block;
-  font-size: 0.8rem;
-  color: #6b6b6b;
-  margin-bottom: 0.6rem;
-}
-.processCompactTitle {
-  font-size: 1rem;
-  font-weight: 500;
 }
 
 /* ===== PROJEKTY ===== */
@@ -504,10 +474,11 @@
   .heroContent {
     padding: 11rem 2.5rem 6rem;
   }
-  .competencesGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .aboutHeader {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  .processCompactRow {
+  .aboutTilesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   .teamGrid4 {
@@ -528,13 +499,7 @@
   .heroScroll {
     display: none;
   }
-  .statsRow {
-    grid-template-columns: 1fr;
-  }
-  .competencesGrid {
-    grid-template-columns: 1fr;
-  }
-  .processCompactRow {
+  .aboutTilesGrid {
     grid-template-columns: 1fr;
   }
   .teamGrid4 {

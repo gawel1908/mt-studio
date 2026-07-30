@@ -14,20 +14,88 @@ interface Props {
 }
 
 const marqueeItems = [
-  'Drogi i ulice', 'Obiekty inżynierskie', 'Odwodnienie i sieci',
-  'Organizacja ruchu', 'Mosty i przepusty', 'BIM / CAD',
-  'Geotechnika', 'Nadzory inwestorskie', 'Infrastruktura techniczna',
+  'Obiekty inżynierskie', 'Drogi i ulice', 'Sieci i odwodnienie',
+  'Geodezja i pomiary', 'Koordynacja projektów', 'BIM / CAD', 'Nadzory inwestorskie',
 ]
 
-const timelineItems = [
-  { year: '2009', title: 'Początki', text: 'Pierwsze opracowania projektowe dla lokalnych inwestycji drogowych i infrastrukturalnych.' },
-  { year: '2012', title: 'Specjalizacja', text: 'Rozwój kompetencji w zakresie dróg, ulic, skrzyżowań, odwodnienia i infrastruktury towarzyszącej.' },
-  { year: '2014', title: 'Rozwój zespołu', text: 'Zwiększenie liczby specjalistów branżowych i wdrożenie nowych standardów projektowania.' },
-  { year: '2016', title: 'Projekty wielobranżowe', text: 'Realizacja dokumentacji wymagających koordynacji branżowej i współpracy z gestorami sieci.' },
-  { year: '2018', title: 'Wdrożenie BIM', text: 'Rozpoczęcie prac w technologii BIM i zaawansowanych narzędziach CAD.' },
-  { year: '2020', title: 'Kompleksowe dokumentacje', text: 'Obsługa inwestycji od koncepcji przez projekty budowlane po wsparcie etapu realizacji.' },
-  { year: '2022', title: 'Współpraca zagraniczna', text: 'Rozpoczęcie współpracy z zagranicznymi biurami projektowymi i wykonawcami.' },
-  { year: '2024', title: 'Nowy kierunek', text: 'Rozwój standardów pracy, narzędzi CAD/BIM oraz współpracy z partnerami krajowymi i zagranicznymi.' },
+const marqueeEn = [
+  'Engineering structures', 'Roads & streets', 'Networks & drainage',
+  'Surveying', 'Project coordination', 'BIM / CAD', 'Investment supervision',
+]
+
+function RoadIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20L9 4h6l5 16M8 14h8M10 4L7 20M14 4l3 16" />
+    </svg>
+  )
+}
+function DropletIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+    </svg>
+  )
+}
+function TrafficLightIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="7" y="2" width="10" height="18" rx="3" />
+      <circle cx="12" cy="7" r="1.4" /><circle cx="12" cy="11" r="1.4" /><circle cx="12" cy="15" r="1.4" />
+      <path d="M12 20v2" />
+    </svg>
+  )
+}
+function LeafIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 20A7 7 0 0 1 4 13c0-6 8-10 16-10 0 8-4 16-10 16z" />
+      <path d="M5 20 19 6" />
+    </svg>
+  )
+}
+function CoordinationIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="8" cy="8" r="3" /><circle cx="17" cy="8" r="3" />
+      <path d="M2 21c0-3.3 2.7-6 6-6s6 2.7 6 6M14 15.5c.6-.3 1.3-.5 2-.5 3.3 0 6 2.7 6 6" />
+    </svg>
+  )
+}
+function CompassIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M16 8l-2.5 6.5L7 17l2.5-6.5z" />
+    </svg>
+  )
+}
+function CubeIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l9 5v10l-9 5-9-5V7z" />
+      <path d="M3 7l9 5 9-5M12 12v10" />
+    </svg>
+  )
+}
+function ShieldIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  )
+}
+
+const aboutTiles = [
+  { Icon: RoadIcon, title: 'Drogi', title_en: 'Roads', text: 'Tworzymy kompleksowe projekty dróg oraz obiektów inżynierskich, łącząc nowoczesne rozwiązania z bezpieczeństwem, trwałością i funkcjonalnością.', text_en: 'We create comprehensive road and engineering structure designs, combining modern solutions with safety, durability and functionality.' },
+  { Icon: DropletIcon, title: 'Sieci i odwodnienia', title_en: 'Networks & drainage', text: 'Opracowujemy projekty sieci sanitarnych, kanalizacji deszczowej, odwodnienia oraz infrastruktury technicznej.', text_en: 'We design sanitary networks, stormwater drainage, drainage systems and technical infrastructure.' },
+  { Icon: TrafficLightIcon, title: 'Inżynieria ruchu', title_en: 'Traffic engineering', text: 'Projektujemy organizację ruchu, sygnalizację świetlną i oznakowanie drogowe oraz wykonujemy analizy bezpieczeństwa ruchu drogowego (BRD).', text_en: 'We design traffic organisation, traffic signals and road signage, and carry out road safety audits.' },
+  { Icon: LeafIcon, title: 'Zieleń i ochrona środowiska', title_en: 'Greenery & environment', text: 'Wykonujemy inwentaryzacje dendrologiczne oraz opracowujemy projekty nasadzeń miejskich i zagospodarowania terenów zieleni.', text_en: 'We carry out tree inventories and design urban planting schemes and green area development.' },
+  { Icon: CoordinationIcon, title: 'Koordynacja projektów', title_en: 'Project coordination', text: 'Prowadzimy koordynację wszystkich branż projektowych, zapewniając zgodność opracowań, terminowość działań i sprawną realizację całego procesu projektowego.', text_en: 'We coordinate all design disciplines, ensuring consistency, timeliness and smooth delivery of the entire design process.' },
+  { Icon: CompassIcon, title: 'Geodezja', title_en: 'Surveying', text: 'Wykonujemy pomiary geodezyjne oraz opracowujemy mapy do celów projektowych, mapy podziałowe, ortofotomapy i modele terenu 3D.', text_en: 'We carry out surveying works and prepare maps for design purposes, subdivision maps, orthophotomaps and 3D terrain models.' },
+  { Icon: CubeIcon, title: 'BIM i koordynacja cyfrowa', title_en: 'BIM & digital coordination', text: 'Tworzymy modele BIM oraz realistyczne wizualizacje 3D, które ułatwiają prezentację projektowanych rozwiązań.', text_en: 'We create BIM models and realistic 3D visualisations that make it easier to present design solutions.' },
+  { Icon: ShieldIcon, title: 'Nadzory inwestorskie', title_en: 'Investment supervision', text: 'Sprawujemy nadzór nad realizacją inwestycji, kontrolując zgodność robót z dokumentacją projektową, przepisami oraz wymaganiami jakościowymi.', text_en: 'We supervise project execution, verifying compliance of works with design documentation, regulations and quality requirements.' },
 ]
 
 export default async function HomePage({ lang, dict }: Props) {
@@ -35,13 +103,16 @@ export default async function HomePage({ lang, dict }: Props) {
   const team = await getTeam(lang)
   const base = lang === 'en' ? '/en' : ''
   const d = dict as any
+  const isEn = lang === 'en'
 
-  const marqueeEn = [
-    'Roads & streets', 'Engineering structures', 'Drainage & networks',
-    'Traffic management', 'Bridges & culverts', 'BIM / CAD',
-    'Geotechnics', 'Investment supervision', 'Technical infrastructure',
-  ]
-  const marqueeList = lang === 'en' ? marqueeEn : marqueeItems
+  const marqueeList = isEn ? marqueeEn : marqueeItems
+
+  const aboutEyebrow = isEn ? 'About us' : 'O nas'
+  const aboutTitle = isEn ? 'A multidisciplinary design office for modern infrastructure.' : 'Wielobranżowe biuro projektowe dla nowoczesnej infrastruktury.'
+  const aboutText = isEn
+    ? 'MT-Projekt is a multidisciplinary design office specialising in modern infrastructure and solutions for public spaces. We create functional, safe and durable designs for cities and areas of various character.'
+    : 'MT-Projekt to wielobranżowe biuro projektowe specjalizujące się w nowoczesnej infrastrukturze i rozwiązaniach dla przestrzeni publicznych. Tworzymy funkcjonalne, bezpieczne i trwałe projekty dla miast oraz terenów o różnym charakterze.'
+  const aboutCta = isEn ? 'Learn more about MT-Projekt →' : 'Poznaj bliżej MT-Projekt →'
 
   return (
     <>
@@ -82,28 +153,32 @@ export default async function HomePage({ lang, dict }: Props) {
         </div>
       </div>
 
-      {/* JAK PRACUJEMY (skrót) */}
-      <section className={styles.processCompact}>
-        <div className={styles.sectionCenter}>
-          <span className={styles.eyebrow}>{d.process.eyebrow}</span>
-          <h2 className={styles.sectionTitle}>{d.process.title}</h2>
+      {/* O NAS */}
+      <section className={styles.about} id="o-nas">
+        <div className={styles.aboutHeader}>
+          <div>
+            <span className={styles.aboutEyebrow}>{aboutEyebrow}</span>
+            <h2 className={styles.aboutTitle}>{aboutTitle}</h2>
+          </div>
+          <p className={styles.aboutHeaderText}>{aboutText}</p>
         </div>
-        <div className={styles.processCompactRow}>
-          {[
-            [d.process.step1_num, d.process.step1_title],
-            [d.process.step2_num, d.process.step2_title],
-            [d.process.step3_num, d.process.step3_title],
-            [d.process.step4_num, d.process.step4_title],
-          ].map(([num, title]) => (
-            <div key={num} className={styles.processCompactStep}>
-              <span className={styles.processNum}>{num}</span>
-              <h3 className={styles.processCompactTitle}>{title}</h3>
+        <div className={styles.aboutTilesGrid}>
+          {aboutTiles.map((tile, i) => (
+            <div key={tile.title} className={styles.aboutTile}>
+              <div className={styles.aboutTileIcon}>
+                <tile.Icon />
+              </div>
+              <h3 className={styles.aboutTileTitle}>
+                <span className={styles.aboutTileNum}>{String(i + 1).padStart(2, '0')}</span>
+                {isEn ? tile.title_en : tile.title}
+              </h3>
+              <p className={styles.aboutTileText}>{isEn ? tile.text_en : tile.text}</p>
             </div>
           ))}
         </div>
-        <Link href={`${base}/o-nas`} className={styles.textLink}>
-          {d.process.more ?? (lang === 'en' ? 'Learn more about how we work →' : 'Dowiedz się więcej o naszym procesie →')}
-        </Link>
+        <div className={styles.aboutCtaRow}>
+          <Link href={`${base}/o-nas`} className={styles.textLink}>{aboutCta}</Link>
+        </div>
       </section>
 
       {/* PROJEKTY */}
