@@ -88,13 +88,13 @@ export default function Navbar({ lang, dict }: Props) {
             {dict.projekty}
           </Link>
 
-          <a href={`${base}/#wspolpraca`} className={cls(activeSection === "wspolpraca")}>
-            {dict.wspolpraca}
-          </a>
-
           <Link href={`${base}/#zespol`} className={cls(activeSection === "zespol")}>
             {dict.zespol}
           </Link>
+
+          <a href={`${base}/#wspolpraca`} className={cls(activeSection === "wspolpraca")}>
+            {dict.wspolpraca}
+          </a>
           <Link href={`${base}/#kontakt`} className={cls(activeSection === "kontakt")}>
             {dict.kontakt}
           </Link>

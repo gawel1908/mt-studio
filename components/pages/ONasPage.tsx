@@ -49,10 +49,10 @@ function ShieldCheckIcon() {
 }
 
 const processSteps = [
-  { Icon: SearchIcon },
-  { Icon: PencilIcon },
-  { Icon: TeamIcon },
-  { Icon: HandshakeIcon },
+  { Icon: SearchIcon, illustration: '/images/proces-analiza.png' },
+  { Icon: PencilIcon, illustration: '/images/proces-projektowanie.png' },
+  { Icon: TeamIcon, illustration: '/images/proces-koordynacja.png' },
+  { Icon: HandshakeIcon, illustration: '/images/proces-wsparcie.png' },
 ]
 
 const timelineItems = [
@@ -156,11 +156,14 @@ export default function ONasPage({ lang, dict }: Props) {
             [(dict as any).process.step2_num, (dict as any).process.step2_title, (dict as any).process.step2_text],
             [(dict as any).process.step3_num, (dict as any).process.step3_title, (dict as any).process.step3_text],
             [(dict as any).process.step4_num, (dict as any).process.step4_title, (dict as any).process.step4_text],
-          ].map(([num, title, text]) => (
+          ].map(([num, title, text], i) => (
             <div key={num} className={styles.processCard}>
               <span className={styles.processNum}>{num}</span>
               <h3 className={styles.processStepTitle}>{title}</h3>
               <p className={styles.processText}>{text}</p>
+              <div className={styles.processIllustration}>
+                <Image src={processSteps[i].illustration} alt="" fill sizes="(max-width: 1024px) 50vw, 25vw" />
+              </div>
             </div>
           ))}
         </div>
