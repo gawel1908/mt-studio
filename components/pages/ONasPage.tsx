@@ -140,14 +140,15 @@ export default function ONasPage({ lang, dict }: Props) {
         </div>
 
         <div className={styles.processTimeline}>
-          <div className={styles.processLine} />
-          <span className={styles.processEndDot} />
+          <span className={`${styles.processEndDot} ${styles.processEndDotLeft}`} />
           {processSteps.map((step, i) => (
-            <div key={i} className={styles.processDot}>
-              <step.Icon />
+            <div key={i} className={styles.processTimelineStep}>
+              <div className={styles.processDot}>
+                <step.Icon />
+              </div>
             </div>
           ))}
-          <span className={styles.processEndDot} />
+          <span className={`${styles.processEndDot} ${styles.processEndDotRight}`} />
         </div>
 
         <div className={styles.processGrid}>

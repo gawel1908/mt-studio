@@ -124,32 +124,45 @@
 
 .processTimeline {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 20px;
   height: 88px;
 }
-.processLine {
+.processTimelineStep {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.processTimelineStep::before,
+.processTimelineStep::after {
+  content: '';
   position: absolute;
-  left: 20px;
-  right: 20px;
   top: 50%;
   height: 2px;
   background: var(--accent);
   transform: translateY(-50%);
   z-index: 0;
 }
+.processTimelineStep::before { left: 0; right: 50%; }
+.processTimelineStep::after { left: 50%; right: 0; }
+.processTimelineStep:first-child::before { display: none; }
+.processTimelineStep:last-child::after { display: none; }
 .processEndDot {
-  position: relative;
+  position: absolute;
+  top: 50%;
   z-index: 1;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--accent);
+  transform: translateY(-50%);
 }
+.processEndDotLeft { left: -14px; }
+.processEndDotRight { right: -14px; }
 .processDot {
   position: relative;
   z-index: 1;
@@ -274,19 +287,15 @@
 @media (max-width: 1024px) {
   .competencesGrid { grid-template-columns: repeat(2, 1fr); }
   .processGrid { grid-template-columns: repeat(2, 1fr); }
+  .processTimeline { gap: 0.5rem; height: 72px; }
   .processDot { width: 52px; height: 52px; padding: 13px; }
-  .processTimeline { height: 72px; }
 }
 @media (max-width: 640px) {
   .competencesGrid { grid-template-columns: 1fr; }
   .processGrid { grid-template-columns: 1fr; }
-  .processTimeline {
-    height: auto;
-    padding: 0;
-    gap: 0.75rem;
-  }
-  .processLine { display: none; }
-  .processEndDot { display: none; }
-  .processDot { width: 44px; height: 44px; padding: 11px; box-shadow: none; }
+  .processTimeline { gap: 0.25rem; height: 56px; }
+  .processDot { width: 40px; height: 40px; padding: 10px; box-shadow: 0 0 0 4px #fafafa; }
+  .processEndDotLeft { left: -8px; }
+  .processEndDotRight { right: -8px; }
   .processFooter { flex-direction: column; text-align: center; gap: 0.75rem; }
 }
