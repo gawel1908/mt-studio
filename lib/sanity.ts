@@ -28,7 +28,7 @@ const projectFields = (lang: string) => {
     location,
     area,
     featured,
-    "coverImage": coverImage.asset->url + "?w=1200&q=85",
+    "coverImage": coverImage.asset->url + "?w=2400&q=90",
     "images": images[].asset->url,
     "description": coalesce(description_${l}, description_pl),
     "pointCloudImage": pointCloudImage.asset->url,
@@ -43,7 +43,7 @@ const teamFields = (lang: string) => {
     "id": _id,
     name,
     "role": coalesce(role_${l}, role_pl),
-    "photo": photo.asset->url + "?w=600&q=80",
+    "photo": photo.asset->url + "?w=1000&q=90",
     "bio": coalesce(bio_${l}, bio_pl)
   `
 }

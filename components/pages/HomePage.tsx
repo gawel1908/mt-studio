@@ -207,7 +207,7 @@ export default async function HomePage({ lang, dict }: Props) {
           {team.map(member => (
             <div key={member.id} className={styles.teamCard}>
               <div className={styles.teamPhoto}>
-                <Image src={member.photo} alt={member.name} fill className={styles.teamImg} />
+                <Image src={member.photo} alt={member.name} fill quality={90} sizes="(max-width: 1024px) 50vw, 25vw" className={styles.teamImg} />
               </div>
               <h3 className={styles.teamName}>{member.name}</h3>
               <p className={styles.teamRole}>{member.role}</p>
