@@ -72,8 +72,7 @@
     "en_col1_title": "Who we support",
     "en_col1_items": ["International engineering offices", "Infrastructure contractors", "Investors and developers", "General designers"],
     "en_col2_title": "Scope of support",
-    "en_col2_items": ["Road design & traffic layouts", "Bridge engineering & structures", "CAD/BIM documentation", "Technical coordination"],
-    "en_cta": "View international cooperation details"
+    "en_col2_items": ["Road design & traffic layouts", "Bridge engineering & structures", "CAD/BIM documentation", "Technical coordination"]
   },
   "contact": {
     "eyebrow": "Contact",

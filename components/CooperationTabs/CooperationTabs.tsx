@@ -6,7 +6,6 @@ interface Props {
     en_col1_items: string[]
     en_col2_title: string
     en_col2_items: string[]
-    en_cta: string
   }
 }
 
@@ -31,12 +30,6 @@ export default function CooperationTabs({ dict }: Props) {
               ))}
             </ul>
           </div>
-        </div>
-        <div className={styles.ctaRow}>
-          <button className={styles.cta}>
-            {dict.en_cta}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </button>
         </div>
       </div>
     </div>

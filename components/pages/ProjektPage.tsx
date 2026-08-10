@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getProjectBySlug, getAllProjects } from '@/lib/sanity'
 import { Dictionary } from '@/lib/dictionaries'
+import GalleryLightbox from '@/components/GalleryLightbox/GalleryLightbox'
 import styles from '@/styles/projekt.module.css'
 
 interface Props {
@@ -61,7 +62,17 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
     <article className={styles.page}>
       {/* HERO */}
       <section className={styles.hero}>
-        <Image src={project.coverImage} alt={project.title} fill priority quality={90} sizes="100vw" className={styles.heroImg} />
+        <Image
+          src={project.coverImage}
+          alt={project.title}
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className={styles.heroImg}
+          placeholder={project.coverImageLqip ? 'blur' : 'empty'}
+          blurDataURL={project.coverImageLqip}
+        />
         <div className={styles.heroOverlay} />
         <div className={styles.heroInner}>
           <div className={styles.breadcrumbs}>
@@ -112,7 +123,16 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
               {project.pointCloudImage && (
                 <div className={styles.techPanelLarge}>
                   <span className={styles.panelCaption}>{d.tech_pointcloud}</span>
-                  <Image src={project.pointCloudImage} alt={d.tech_pointcloud} fill quality={90} sizes="(max-width: 1024px) 100vw, 70vw" className={styles.techPanelImg} />
+                  <Image
+                    src={project.pointCloudImage}
+                    alt={d.tech_pointcloud}
+                    fill
+                    quality={90}
+                    sizes="(max-width: 1024px) 100vw, 70vw"
+                    className={styles.techPanelImg}
+                    placeholder={project.pointCloudImageLqip ? 'blur' : 'empty'}
+                    blurDataURL={project.pointCloudImageLqip}
+                  />
                 </div>
               )}
               {(project.terrainModelImage || project.existingStateImage) && (
@@ -120,13 +140,31 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
                   {project.terrainModelImage && (
                     <div className={styles.techPanelSmall}>
                       <span className={styles.panelCaption}>{d.tech_terrain}</span>
-                      <Image src={project.terrainModelImage} alt={d.tech_terrain} fill quality={90} sizes="(max-width: 1024px) 50vw, 35vw" className={styles.techPanelImg} />
+                      <Image
+                        src={project.terrainModelImage}
+                        alt={d.tech_terrain}
+                        fill
+                        quality={90}
+                        sizes="(max-width: 1024px) 50vw, 35vw"
+                        className={styles.techPanelImg}
+                        placeholder={project.terrainModelImageLqip ? 'blur' : 'empty'}
+                        blurDataURL={project.terrainModelImageLqip}
+                      />
                     </div>
                   )}
                   {project.existingStateImage && (
                     <div className={styles.techPanelSmall}>
                       <span className={styles.panelCaption}>{d.tech_existing}</span>
-                      <Image src={project.existingStateImage} alt={d.tech_existing} fill quality={90} sizes="(max-width: 1024px) 50vw, 35vw" className={styles.techPanelImg} />
+                      <Image
+                        src={project.existingStateImage}
+                        alt={d.tech_existing}
+                        fill
+                        quality={90}
+                        sizes="(max-width: 1024px) 50vw, 35vw"
+                        className={styles.techPanelImg}
+                        placeholder={project.existingStateImageLqip ? 'blur' : 'empty'}
+                        blurDataURL={project.existingStateImageLqip}
+                      />
                     </div>
                   )}
                 </div>
@@ -145,13 +183,7 @@ export default async function ProjektPage({ lang, dict, slug }: Props) {
               <div className={styles.greenLine} />
             </div>
           </div>
-          <div className={styles.galleryGrid}>
-            {gallery.map((img, i) => (
-              <div key={i} className={styles.galleryItem}>
-                <Image src={img} alt={`${project.title} — ${i + 1}`} fill quality={90} sizes="(max-width: 768px) 100vw, 25vw" className={styles.galleryImg} />
-              </div>
-            ))}
-          </div>
+          <GalleryLightbox images={gallery} alt={project.title} />
         </section>
       )}
 

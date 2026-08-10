@@ -29,11 +29,15 @@ const projectFields = (lang: string) => {
     area,
     featured,
     "coverImage": coverImage.asset->url + "?w=2400&q=90",
-    "images": images[].asset->url,
+    "coverImageLqip": coverImage.asset->metadata.lqip,
+    "images": images[]{ "url": asset->url, "lqip": asset->metadata.lqip },
     "description": coalesce(description_${l}, description_pl),
     "pointCloudImage": pointCloudImage.asset->url,
+    "pointCloudImageLqip": pointCloudImage.asset->metadata.lqip,
     "terrainModelImage": terrainModelImage.asset->url,
-    "existingStateImage": existingStateImage.asset->url
+    "terrainModelImageLqip": terrainModelImage.asset->metadata.lqip,
+    "existingStateImage": existingStateImage.asset->url,
+    "existingStateImageLqip": existingStateImage.asset->metadata.lqip
   `
 }
 
@@ -44,6 +48,7 @@ const teamFields = (lang: string) => {
     name,
     "role": coalesce(role_${l}, role_pl),
     "photo": photo.asset->url + "?w=1000&q=90",
+    "photoLqip": photo.asset->metadata.lqip,
     "bio": coalesce(bio_${l}, bio_pl)
   `
 }

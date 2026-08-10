@@ -4,6 +4,11 @@ export interface SanityImage {
   hotspot?: { x: number; y: number; height: number; width: number }
 }
 
+export interface GalleryImage {
+  url: string
+  lqip?: string
+}
+
 export interface Project {
   id: string
   slug: string
@@ -11,13 +16,17 @@ export interface Project {
   year: number
   location: string
   coverImage: string
-  images: string[]
+  coverImageLqip?: string
+  images: GalleryImage[]
   description: string
   area?: string
   featured: boolean
   pointCloudImage?: string
+  pointCloudImageLqip?: string
   terrainModelImage?: string
+  terrainModelImageLqip?: string
   existingStateImage?: string
+  existingStateImageLqip?: string
 }
 
 export interface TeamMember {
@@ -25,6 +34,7 @@ export interface TeamMember {
   name: string
   role: string
   photo: string
+  photoLqip?: string
   bio?: string
 }
 
