@@ -14,6 +14,7 @@ interface NavDict {
   wspolpraca_miedzynarodowa: string;
   zespol: string;
   kontakt: string;
+  kariera: string;
   zapytanie: string;
 }
 
@@ -78,25 +79,25 @@ export default function Navbar({ lang, dict }: Props) {
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-          <Link href={base || "/"} className={cls(!isProjects && !isAbout && activeSection === null)}>
+          <Link href={base || "/"} className={cls(!isProjects && !isAbout && activeSection === null)} onClick={() => setMenuOpen(false)}>
             {dict.strona_glowna}
           </Link>
-          <Link href={`${base}/o-nas`} className={cls(isAbout)}>
+          <Link href={`${base}/o-nas`} className={cls(isAbout)} onClick={() => setMenuOpen(false)}>
             {dict.o_nas}
           </Link>
-          <Link href={`${base}/projekty`} className={cls(isProjects)}>
+          <Link href={`${base}/projekty`} className={cls(isProjects)} onClick={() => setMenuOpen(false)}>
             {dict.projekty}
           </Link>
 
-          <Link href={`${base}/#zespol`} className={cls(activeSection === "zespol")}>
+          <Link href={`${base}/#zespol`} className={cls(activeSection === "zespol")} onClick={() => setMenuOpen(false)}>
             {dict.zespol}
           </Link>
 
-          <a href={`${base}/#wspolpraca`} className={cls(activeSection === "wspolpraca")}>
+          <a href={`${base}/#wspolpraca`} className={cls(activeSection === "wspolpraca")} onClick={() => setMenuOpen(false)}>
             {dict.wspolpraca}
           </a>
-          <Link href={`${base}/#kontakt`} className={cls(activeSection === "kontakt")}>
-            {dict.kontakt}
+          <Link href={`${base}/#kontakt`} className={cls(activeSection === "kontakt")} onClick={() => setMenuOpen(false)}>
+            {dict.kariera}
           </Link>
         </nav>
 
@@ -104,7 +105,7 @@ export default function Navbar({ lang, dict }: Props) {
           <Link href={switchPath} className={styles.langSwitch}>
             {lang === "pl" ? "EN" : "PL"}
           </Link>
-          <a href={`${base}/#kontakt`} className={styles.cta}>
+          <a href={`${base}/#kontakt`} className={styles.cta} onClick={() => setMenuOpen(false)}>
             {dict.kontakt}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -113,7 +114,7 @@ export default function Navbar({ lang, dict }: Props) {
           <button
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={menuOpen ? "Zamknij menu" : "Otwórz menu"}
           >
             <span /><span /><span />
           </button>

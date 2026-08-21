@@ -9,36 +9,6 @@ interface Props {
   dict: Dictionary
 }
 
-function SearchIcon() {
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="10" cy="10" r="6" /><path d="M20 20l-5.5-5.5" />
-    </svg>
-  )
-}
-function PencilIcon() {
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z" />
-    </svg>
-  )
-}
-function TeamIcon() {
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="9" cy="7" r="3" /><circle cx="17" cy="8" r="2.3" />
-      <path d="M2 21c0-3.3 3.1-6 7-6s7 2.7 7 6M15.5 13.8c2.6.4 4.5 2.4 4.5 4.7" />
-    </svg>
-  )
-}
-function HandshakeIcon() {
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 12l4-4 4 3-3 3M22 12l-4-4-4 3 3 3" />
-      <path d="M6 11l4 4 2-2M18 11l-4 4-2-2" />
-    </svg>
-  )
-}
 function ShieldCheckIcon() {
   return (
     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -49,10 +19,10 @@ function ShieldCheckIcon() {
 }
 
 const processSteps = [
-  { Icon: SearchIcon, illustration: '/images/proces-analiza.png' },
-  { Icon: PencilIcon, illustration: '/images/proces-projektowanie.png' },
-  { Icon: TeamIcon, illustration: '/images/proces-koordynacja.png' },
-  { Icon: HandshakeIcon, illustration: '/images/proces-wsparcie.png' },
+  { illustration: '/images/proces-analiza.png' },
+  { illustration: '/images/proces-projektowanie.png' },
+  { illustration: '/images/proces-koordynacja.png' },
+  { illustration: '/images/proces-wsparcie.png' },
 ]
 
 const timelineItems = [
@@ -144,7 +114,7 @@ export default function ONasPage({ lang, dict }: Props) {
           {processSteps.map((step, i) => (
             <div key={i} className={styles.processTimelineStep}>
               <div className={styles.processDot}>
-                <step.Icon />
+                <Image src={step.illustration} alt="" fill sizes="64px" className={styles.processDotImg} />
               </div>
             </div>
           ))}
@@ -153,18 +123,14 @@ export default function ONasPage({ lang, dict }: Props) {
 
         <div className={styles.processGrid}>
           {[
-            [(dict as any).process.step1_num, (dict as any).process.step1_title, (dict as any).process.step1_text],
-            [(dict as any).process.step2_num, (dict as any).process.step2_title, (dict as any).process.step2_text],
-            [(dict as any).process.step3_num, (dict as any).process.step3_title, (dict as any).process.step3_text],
-            [(dict as any).process.step4_num, (dict as any).process.step4_title, (dict as any).process.step4_text],
-          ].map(([num, title, text], i) => (
+            [(dict as any).process.step1_num, (dict as any).process.step1_title],
+            [(dict as any).process.step2_num, (dict as any).process.step2_title],
+            [(dict as any).process.step3_num, (dict as any).process.step3_title],
+            [(dict as any).process.step4_num, (dict as any).process.step4_title],
+          ].map(([num, title]) => (
             <div key={num} className={styles.processCard}>
               <span className={styles.processNum}>{num}</span>
               <h3 className={styles.processStepTitle}>{title}</h3>
-              <p className={styles.processText}>{text}</p>
-              <div className={styles.processIllustration}>
-                <Image src={processSteps[i].illustration} alt="" fill sizes="(max-width: 1024px) 50vw, 25vw" />
-              </div>
             </div>
           ))}
         </div>

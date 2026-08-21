@@ -94,6 +94,8 @@
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
+  position: relative;
+  z-index: 60;
 }
 
 .langSwitch {

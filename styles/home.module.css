@@ -233,12 +233,9 @@
   padding: 6rem 2rem;
 }
 .aboutHeader {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 1400px;
+  max-width: 700px;
   margin: 0 auto 3.5rem;
-  align-items: end;
+  text-align: center;
 }
 .aboutEyebrow {
   display: block;
@@ -255,11 +252,6 @@
   letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--fg);
-}
-.aboutHeaderText {
-  font-size: 0.95rem;
-  color: #6b6b6b;
-  line-height: 1.7;
 }
 .aboutTilesGrid {
   display: grid;
@@ -473,10 +465,6 @@
 @media (max-width: 1024px) {
   .heroContent {
     padding: 11rem 2.5rem 6rem;
-  }
-  .aboutHeader {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
   .aboutTilesGrid {
     grid-template-columns: repeat(2, 1fr);

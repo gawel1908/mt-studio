@@ -109,9 +109,6 @@ export default async function HomePage({ lang, dict }: Props) {
 
   const aboutEyebrow = isEn ? 'About us' : 'O nas'
   const aboutTitle = isEn ? 'A multidisciplinary design office for modern infrastructure.' : 'Wielobranżowe biuro projektowe dla nowoczesnej infrastruktury.'
-  const aboutText = isEn
-    ? 'MT-Projekt is a multidisciplinary design office specialising in modern infrastructure and solutions for public spaces. We create functional, safe and durable designs for cities and areas of various character.'
-    : 'MT-Projekt to wielobranżowe biuro projektowe specjalizujące się w nowoczesnej infrastrukturze i rozwiązaniach dla przestrzeni publicznych. Tworzymy funkcjonalne, bezpieczne i trwałe projekty dla miast oraz terenów o różnym charakterze.'
   const aboutCta = isEn ? 'Learn more about MT-Projekt →' : 'Poznaj bliżej MT-Projekt →'
 
   return (
@@ -156,11 +153,8 @@ export default async function HomePage({ lang, dict }: Props) {
       {/* O NAS */}
       <section className={styles.about} id="o-nas">
         <div className={styles.aboutHeader}>
-          <div>
-            <span className={styles.aboutEyebrow}>{aboutEyebrow}</span>
-            <h2 className={styles.aboutTitle}>{aboutTitle}</h2>
-          </div>
-          <p className={styles.aboutHeaderText}>{aboutText}</p>
+          <span className={styles.aboutEyebrow}>{aboutEyebrow}</span>
+          <h2 className={styles.aboutTitle}>{aboutTitle}</h2>
         </div>
         <div className={styles.aboutTilesGrid}>
           {aboutTiles.map((tile, i) => (

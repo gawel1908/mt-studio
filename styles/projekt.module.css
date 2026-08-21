@@ -71,7 +71,7 @@
 .heroTitle {
   font-family: var(--font-display);
   color: #fff;
-  font-size: clamp(32px, 5vw, 60px);
+  font-size: clamp(26px, 3.5vw, 44px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -508,7 +508,7 @@
   }
 
   .heroTitle {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .cardsSection {
