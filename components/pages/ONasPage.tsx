@@ -114,7 +114,14 @@ export default function ONasPage({ lang, dict }: Props) {
           {processSteps.map((step, i) => (
             <div key={i} className={styles.processTimelineStep}>
               <div className={styles.processDot}>
-                <Image src={step.illustration} alt="" fill sizes="64px" className={styles.processDotImg} />
+                <Image
+                  src={step.illustration}
+                  alt=""
+                  fill
+                  quality={90}
+                  sizes="(max-width: 640px) 60px, (max-width: 1024px) 78px, 104px"
+                  className={styles.processDotImg}
+                />
               </div>
             </div>
           ))}
