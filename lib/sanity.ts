@@ -1,7 +1,7 @@
 import { createClient } from 'next-sanity'
 import { createImageUrlBuilder } from '@sanity/image-url'
 import type { SanityImageSource } from '@sanity/image-url'
-import type { Project, TeamMember } from './types'
+import type { JobPosting, Project, TeamMember } from './types'
 
 export const client = createClient({
   projectId: 'b1bu8x3a',
@@ -53,6 +53,20 @@ const teamFields = (lang: string) => {
   `
 }
 
+const jobFields = (lang: string) => {
+  const l = lang === 'en' ? 'en' : 'pl'
+  return `
+    "id": _id,
+    "slug": slug.current,
+    "title": coalesce(title_${l}, title_pl),
+    category,
+    location,
+    "employmentType": coalesce(employment_type_${l}, employment_type_pl),
+    "summary": coalesce(summary_${l}, summary_pl),
+    "description": coalesce(description_${l}, description_pl)
+  `
+}
+
 import {
   projects as mockProjects,
   team as mockTeam,
@@ -94,4 +108,24 @@ export async function getTeam(lang = 'pl'): Promise<TeamMember[]> {
     `*[_type == "teamMember"] | order(order asc) { ${teamFields(lang)} }`
   )
   return results.length > 0 ? results : mockTeam as TeamMember[]
+}
+
+export async function getJobPostings(lang = 'pl'): Promise<JobPosting[]> {
+  return client.fetch<JobPosting[]>(
+    `*[_type == "jobPosting" && active == true] | order(order asc, publishedAt desc) { ${jobFields(lang)} }`
+  )
+}
+
+export async function getJobPostingBySlug(slug: string, lang = 'pl'): Promise<JobPosting | null> {
+  return client.fetch<JobPosting | null>(
+    `*[_type == "jobPosting" && active == true && slug.current == $slug][0] { ${jobFields(lang)} }`,
+    { slug }
+  )
+}
+
+export async function getAllJobSlugs(): Promise<string[]> {
+  const results = await client.fetch<{ slug: string }[]>(
+    `*[_type == "jobPosting" && active == true] { "slug": slug.current }`
+  )
+  return results.map(r => r.slug)
 }

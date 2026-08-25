@@ -46,3 +46,16 @@ export interface StudioInfo {
   phone: string
   address: string
 }
+
+export type JobCategory = 'roads' | 'bridges' | 'bim' | 'surveying' | 'team' | 'supervision' | 'networks'
+
+export interface JobPosting {
+  id: string
+  slug: string
+  title: string
+  category: JobCategory
+  location: string
+  employmentType: string
+  summary: string
+  description?: string
+}

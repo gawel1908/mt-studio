@@ -129,5 +129,36 @@
     "cta_title": "Porozmawiajmy o Twoim projekcie",
     "cta_sub": "Przygotujemy zakres wsparcia dopasowany do inwestycji, etapu dokumentacji i wymagań technicznych.",
     "cta_btn": "Skontaktuj się z nami"
+  },
+  "kariera_page": {
+    "eyebrow": "Kariera",
+    "title": "Projektujemy przyszłość ",
+    "title_accent": "razem.",
+    "text": "W MT-Projekt łączymy wiedzę, doświadczenie i nowoczesne technologie, aby tworzyć rozwiązania infrastrukturalne, które realnie wpływają na otoczenie.",
+    "cta": "Zobacz, jak pracujemy",
+    "why_eyebrow": "Co nas wyróżnia?",
+    "why_title": "Dlaczego warto pracować w MT-Projekt?",
+    "jobs_eyebrow": "Otwarte stanowiska",
+    "jobs_title": "Dołącz do naszego zespołu",
+    "jobs_see_all": "Zobacz wszystkie oferty",
+    "join_eyebrow": "Dołącz do naszego zespołu",
+    "join_title": "Nie mamy dziś otwartych rekrutacji — ale jesteśmy otwarci na dobre osoby",
+    "join_text1": "Choć obecnie nie prowadzimy rekrutacji na konkretne stanowiska, chętnie poznamy osoby, które mogą wnieść wartość do naszego zespołu.",
+    "join_text2": "Jeśli uważasz, że Twoje doświadczenie, podejście i zaangażowanie pasują do MT-Projekt, prześlij nam swoją aplikację.",
+    "join_text3": "Skontaktujemy się z wybranymi osobami, gdy pojawi się odpowiednia możliwość współpracy.",
+    "join_cta": "Prześlij aplikację",
+    "spontaneous_title": "Aplikacja spontaniczna",
+    "spontaneous_text": "Jeśli chcesz dołączyć do MT-Projekt, zostaw nam kilka informacji o sobie. Chętnie wrócimy do Twojej aplikacji, gdy pojawi się odpowiedni moment.",
+    "spontaneous_cta": "Aplikuj spontanicznie"
+  },
+  "oferta_page": {
+    "home": "Strona główna",
+    "back": "Kariera",
+    "back_offers": "Oferty pracy",
+    "all_offers_title": "Otwarte stanowiska",
+    "location": "Lokalizacja",
+    "employment_type": "Wymiar pracy",
+    "apply_cta": "Aplikuj na to stanowisko",
+    "no_offers": "Obecnie nie prowadzimy rekrutacji na konkretne stanowiska. Sprawdź ponownie wkrótce lub wyślij nam aplikację spontaniczną."
   }
 }
