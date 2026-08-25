@@ -71,9 +71,19 @@
     "eyebrow": "Cooperation",
     "title": "International cooperation.",
     "en_col1_title": "Who we support",
-    "en_col1_items": ["International engineering offices", "Infrastructure contractors", "Investors and developers", "General designers"],
+    "en_col1_items": [
+      "International engineering offices",
+      "Infrastructure contractors",
+      "Investors and developers",
+      "General designers"
+    ],
     "en_col2_title": "Scope of support",
-    "en_col2_items": ["Road design & traffic layouts", "Bridge engineering & structures", "CAD/BIM documentation", "Technical coordination"]
+    "en_col2_items": [
+      "Road design & traffic layouts",
+      "Bridge engineering & structures",
+      "CAD/BIM documentation",
+      "Technical coordination"
+    ]
   },
   "contact": {
     "eyebrow": "Contact",
@@ -133,7 +143,7 @@
   "kariera_page": {
     "eyebrow": "Careers",
     "title": "Designing the future ",
-    "title_accent": "together.",
+    "title_accent": "- together.",
     "text": "At MT-Projekt we combine knowledge, experience and modern technology to create infrastructure solutions that make a real difference.",
     "cta": "See how we work",
     "why_eyebrow": "What sets us apart?",

@@ -1,12 +1,21 @@
 /* ===== HERO ===== */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  align-items: stretch;
   gap: 3rem;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 140px 2rem 5rem;
+  min-height: 720px;
+  padding-top: 81px;
+  padding-left: 7rem;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 580px;
+  padding-bottom: 5rem;
+  padding-left: 140px;
 }
 
 .eyebrow {
@@ -52,6 +61,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: background 0.2s;
+  max-width: 224px;
 }
 .heroCta:hover {
   background: var(--accent-light);
@@ -59,18 +69,16 @@
 
 .heroImageWrap {
   position: relative;
-  aspect-ratio: 4/3;
-  border-radius: 12px;
+  height: 100%;
   overflow: hidden;
-  background: #e8e8e8;
 }
 .heroImage {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: right;
 }
 
 /* ===== CO NAS WYRÓŻNIA ===== */
 .why {
-  border-top: 1px solid #e5e5e5;
   padding: 5rem 2rem;
 }
 .sectionHeader {
@@ -205,7 +213,9 @@
   font-size: 0.85rem;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .jobsSeeAll:hover {
   background: var(--accent);
@@ -380,11 +390,19 @@
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 120px 1.25rem 3rem;
+    min-height: 0;
+    padding: 120px 1.25rem 0;
     gap: 2rem;
+  }
+  .heroLeft {
+    max-width: none;
+    padding-bottom: 2rem;
   }
   .heroImageWrap {
     order: -1;
+    height: auto;
+    aspect-ratio: 4/3;
+    margin: 0 -1.25rem;
   }
   .why {
     padding: 3.5rem 1.25rem;

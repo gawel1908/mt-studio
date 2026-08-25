@@ -71,9 +71,19 @@
     "eyebrow": "Współpraca",
     "title": "Współpraca międzynarodowa.",
     "en_col1_title": "Who we support",
-    "en_col1_items": ["International engineering offices", "Infrastructure contractors", "Investors and developers", "General designers"],
+    "en_col1_items": [
+      "International engineering offices",
+      "Infrastructure contractors",
+      "Investors and developers",
+      "General designers"
+    ],
     "en_col2_title": "Scope of support",
-    "en_col2_items": ["Road design & traffic layouts", "Bridge engineering & structures", "CAD/BIM documentation", "Technical coordination"]
+    "en_col2_items": [
+      "Road design & traffic layouts",
+      "Bridge engineering & structures",
+      "CAD/BIM documentation",
+      "Technical coordination"
+    ]
   },
   "contact": {
     "eyebrow": "Kontakt",
@@ -133,7 +143,7 @@
   "kariera_page": {
     "eyebrow": "Kariera",
     "title": "Projektujemy przyszłość ",
-    "title_accent": "razem.",
+    "title_accent": "- razem.",
     "text": "W MT-Projekt łączymy wiedzę, doświadczenie i nowoczesne technologie, aby tworzyć rozwiązania infrastrukturalne, które realnie wpływają na otoczenie.",
     "cta": "Zobacz, jak pracujemy",
     "why_eyebrow": "Co nas wyróżnia?",
