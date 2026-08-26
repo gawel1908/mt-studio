@@ -168,18 +168,16 @@
 .sectionHeaderRow {
   max-width: 1300px;
   margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sectionHeaderRow .eyebrow {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
-.sectionHeaderRow .eyebrow::after {
-  content: "";
-  height: 1px;
-  width: 48px;
-  background: var(--accent);
-}
+
 .sectionTitle {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 400;
