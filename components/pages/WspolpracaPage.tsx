@@ -212,9 +212,6 @@ export default function WspolpracaPage({ lang, dict }: Props) {
               <div className={styles.howContent}>
                 <h3 className={styles.howTitle}>{card.title}</h3>
                 <p className={styles.howText}>{card.text}</p>
-                <span className={styles.howArrow}>
-                  <ArrowIcon />
-                </span>
               </div>
             </div>
           ))}
