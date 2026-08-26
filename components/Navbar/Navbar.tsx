@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
-const SECTIONS = ["zespol", "wspolpraca"];
+const SECTIONS = ["zespol"];
 
 interface NavDict {
   strona_glowna: string;
@@ -70,6 +70,7 @@ export default function Navbar({ lang, dict }: Props) {
   const isProjects = pathname.startsWith(`${base}/projekty`);
   const isAbout = pathname === `${base}/o-nas`;
   const isKariera = pathname === `${base}/kariera`;
+  const isWspolpraca = pathname === `${base}/wspolpraca`;
   const cls = (active: boolean) => (active ? styles.active : "");
 
   return (
@@ -80,7 +81,7 @@ export default function Navbar({ lang, dict }: Props) {
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-          <Link href={base || "/"} className={cls(!isProjects && !isAbout && !isKariera && activeSection === null)} onClick={() => setMenuOpen(false)}>
+          <Link href={base || "/"} className={cls(!isProjects && !isAbout && !isKariera && !isWspolpraca && activeSection === null)} onClick={() => setMenuOpen(false)}>
             {dict.strona_glowna}
           </Link>
           <Link href={`${base}/o-nas`} className={cls(isAbout)} onClick={() => setMenuOpen(false)}>
@@ -94,9 +95,9 @@ export default function Navbar({ lang, dict }: Props) {
             {dict.zespol}
           </Link>
 
-          <a href={`${base}/#wspolpraca`} className={cls(activeSection === "wspolpraca")} onClick={() => setMenuOpen(false)}>
+          <Link href={`${base}/wspolpraca`} className={cls(isWspolpraca)} onClick={() => setMenuOpen(false)}>
             {dict.wspolpraca}
-          </a>
+          </Link>
           <Link href={`${base}/kariera`} className={cls(isKariera)} onClick={() => setMenuOpen(false)}>
             {dict.kariera}
           </Link>
