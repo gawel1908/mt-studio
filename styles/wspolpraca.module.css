@@ -2,7 +2,7 @@
 .hero {
   position: relative;
   min-height: 640px;
-  padding-top: 81px;
+  padding: 81px 2rem 0;
   overflow: hidden;
 }
 
@@ -13,8 +13,13 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  max-width: 660px;
-  padding: 3rem 5rem 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  margin-top: 20px;
+}
+.heroLeft > * {
+  max-width: 560px;
 }
 
 .eyebrow {
@@ -89,23 +94,6 @@
     rgba(255, 255, 255, 0) 75%
   );
 }
-.heroCoords {
-  position: absolute;
-  z-index: 1;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--accent-light);
-  font-weight: 800;
-}
-.heroCoords svg {
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
 /* ===== PARTNER SECTION ===== */
 .partner {
   border-top: 1px solid #e5e5e5;
@@ -207,13 +195,19 @@
   max-width: 1300px;
   margin: 0 auto;
 }
+.expertiseItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
 .expertiseNum {
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--accent);
   padding-bottom: 0.75rem;
-  margin-bottom: 1.5rem;
   border-bottom: 2px solid var(--accent);
   display: inline-block;
 }
@@ -221,7 +215,6 @@
   position: relative;
   width: 122px;
   height: 122px;
-  margin-bottom: 1.5rem;
 }
 .expertiseTitle {
   font-size: 1.05rem;
