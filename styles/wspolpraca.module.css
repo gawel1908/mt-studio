@@ -248,19 +248,26 @@
   margin: 0 auto;
 }
 .howCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.75rem;
 }
 .howIcon {
-  width: 52px;
-  height: 52px;
+  position: relative;
+  width: 124px;
+  height: 124px;
+  flex-shrink: 0;
   border-radius: 50%;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid var(--accent-light);
   padding: 12px;
-  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.howContent {
+  min-width: 0;
 }
 .howTitle {
   font-size: 1.05rem;

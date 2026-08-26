@@ -100,9 +100,21 @@ export default function WspolpracaPage({ lang, dict }: Props) {
   ];
 
   const howCards = [
-    { title: d.how1_title, text: d.how1_text },
-    { title: d.how2_title, text: d.how2_text },
-    { title: d.how3_title, text: d.how3_text },
+    {
+      image: "/images/wspolpraca/wsparcie-projektowe.png",
+      title: d.how1_title,
+      text: d.how1_text,
+    },
+    {
+      image: "/images/wspolpraca/dedykowany-zespol-projektowy.png",
+      title: d.how2_title,
+      text: d.how2_text,
+    },
+    {
+      image: "/images/wspolpraca/wsparcie-cad-bim.png",
+      title: d.how3_title,
+      text: d.how3_text,
+    },
   ];
 
   return (
@@ -210,25 +222,21 @@ export default function WspolpracaPage({ lang, dict }: Props) {
           {howCards.map((card) => (
             <div key={card.title} className={styles.howCard}>
               <div className={styles.howIcon}>
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="8" r="4" />
-                  <path d="M4 21c0-3.9 3.6-7 8-7s8 3.1 8 7" />
-                </svg>
+                <Image
+                  src={card.image}
+                  alt=""
+                  fill
+                  quality={100}
+                  sizes="124px"
+                />
               </div>
-              <h3 className={styles.howTitle}>{card.title}</h3>
-              <p className={styles.howText}>{card.text}</p>
-              <span className={styles.howArrow}>
-                <ArrowIcon />
-              </span>
+              <div className={styles.howContent}>
+                <h3 className={styles.howTitle}>{card.title}</h3>
+                <p className={styles.howText}>{card.text}</p>
+                <span className={styles.howArrow}>
+                  <ArrowIcon />
+                </span>
+              </div>
             </div>
           ))}
         </div>
