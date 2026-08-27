@@ -84,6 +84,18 @@ export default async function KarieraPage({ lang, dict }: Props) {
     <>
       {/* HERO */}
       <section className={styles.hero}>
+        <div className={styles.heroImageWrap}>
+          <Image
+            src="/images/kariera/carrier-hero.png"
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className={styles.heroImage}
+          />
+        </div>
+        <div className={styles.heroScrim} />
         <div className={styles.heroLeft}>
           <span className={styles.eyebrow}>{d.eyebrow}</span>
           <h1 className={styles.heroTitle}>
@@ -103,17 +115,6 @@ export default async function KarieraPage({ lang, dict }: Props) {
               />
             </svg>
           </Link>
-        </div>
-        <div className={styles.heroImageWrap}>
-          <Image
-            src="/images/kariera/carrier-hero.png"
-            alt={d.eyebrow}
-            fill
-            priority
-            quality={90}
-            sizes="(max-width: 900px) 100vw, 50vw"
-            className={styles.heroImage}
-          />
         </div>
       </section>
 

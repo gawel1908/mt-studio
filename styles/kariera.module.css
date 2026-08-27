@@ -1,20 +1,25 @@
 /* ===== HERO ===== */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: stretch;
-  gap: 3rem;
-  min-height: 720px;
-  padding-top: 81px;
-  padding-left: 7rem;
+  position: relative;
+  min-height: 640px;
+  padding: 81px 2rem 0;
+  overflow: hidden;
 }
 
 .heroLeft {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 560px;
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   padding-bottom: 5rem;
+  margin-top: 20px;
+}
+.heroLeft > * {
+  max-width: 560px;
 }
 
 .eyebrow {
@@ -67,13 +72,25 @@
 }
 
 .heroImageWrap {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 .heroImage {
   object-fit: cover;
   object-position: top right;
+}
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    rgba(255, 255, 255, 0.85) 30%,
+    rgba(255, 255, 255, 0.3) 55%,
+    rgba(255, 255, 255, 0) 75%
+  );
 }
 
 /* ===== CO NAS WYRÓŻNIA ===== */
@@ -388,20 +405,21 @@
 
 @media (max-width: 768px) {
   .hero {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    padding: 120px 1.25rem 0;
-    gap: 2rem;
+    min-height: 520px;
+    padding: 120px 1.25rem 3rem;
   }
   .heroLeft {
     max-width: none;
-    padding-bottom: 2rem;
+    padding: 0;
   }
-  .heroImageWrap {
-    order: -1;
-    height: auto;
-    aspect-ratio: 4/3;
-    margin: 0 -1.25rem;
+  .heroScrim {
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      rgba(255, 255, 255, 0.9) 45%,
+      rgba(255, 255, 255, 0.55) 70%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
   }
   .why {
     padding: 3.5rem 1.25rem;
