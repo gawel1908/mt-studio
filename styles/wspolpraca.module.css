@@ -17,6 +17,7 @@
   margin: 0 auto;
   padding-bottom: 5rem;
   margin-top: 20px;
+  min-height: 640px;
 }
 .heroLeft > * {
   max-width: 560px;
@@ -382,6 +383,7 @@
   .heroLeft {
     max-width: none;
     padding: 0;
+    min-height: initial;
   }
   .heroScrim {
     background: linear-gradient(
