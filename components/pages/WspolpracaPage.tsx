@@ -82,24 +82,6 @@ export default function WspolpracaPage({ lang, dict }: Props) {
     },
   ];
 
-  const howCards = [
-    {
-      image: "/images/wspolpraca/wsparcie-projektowe.png",
-      title: d.how1_title,
-      text: d.how1_text,
-    },
-    {
-      image: "/images/wspolpraca/dedykowany-zespol-projektowy.png",
-      title: d.how2_title,
-      text: d.how2_text,
-    },
-    {
-      image: "/images/wspolpraca/wsparcie-cad-bim.png",
-      title: d.how3_title,
-      text: d.how3_text,
-    },
-  ];
-
   return (
     <>
       {/* HERO */}
@@ -186,33 +168,6 @@ export default function WspolpracaPage({ lang, dict }: Props) {
               </div>
               <h3 className={styles.expertiseTitle}>{item.title}</h3>
               <p className={styles.expertiseText}>{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* JAK MOŻEMY WSPÓLNIE DZIAŁAĆ */}
-      <section className={styles.how}>
-        <div className={styles.sectionHeaderRow}>
-          <span className={styles.eyebrow}>{d.how_eyebrow}</span>
-          <h2 className={styles.sectionTitle}>{d.how_title}</h2>
-        </div>
-        <div className={styles.howGrid}>
-          {howCards.map((card) => (
-            <div key={card.title} className={styles.howCard}>
-              <div className={styles.howIcon}>
-                <Image
-                  src={card.image}
-                  alt=""
-                  fill
-                  quality={100}
-                  sizes="124px"
-                />
-              </div>
-              <div className={styles.howContent}>
-                <h3 className={styles.howTitle}>{card.title}</h3>
-                <p className={styles.howText}>{card.text}</p>
-              </div>
             </div>
           ))}
         </div>

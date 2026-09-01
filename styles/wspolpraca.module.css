@@ -227,55 +227,6 @@
   line-height: 1.6;
 }
 
-/* ===== JAK MOŻEMY WSPÓLNIE DZIAŁAĆ ===== */
-.how {
-  background: #f7f8f7;
-  padding: 5rem 2rem;
-}
-.howGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.howCard {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 1.75rem;
-  justify-content: center;
-  align-items: center;
-}
-.howIcon {
-  position: relative;
-  width: 124px;
-  height: 124px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  border: 2px solid var(--accent-light);
-  padding: 12px;
-  overflow: hidden;
-}
-.howContent {
-  min-width: 0;
-}
-.howTitle {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--fg);
-  margin-bottom: 0.5rem;
-}
-.howText {
-  font-size: 0.88rem;
-  color: #6b6b6b;
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-
 /* ===== CTA PANEL ===== */
 .ctaSection {
   display: grid;
@@ -364,9 +315,6 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
   }
-  .howGrid {
-    grid-template-columns: 1fr 1fr;
-  }
   .ctaSection {
     grid-template-columns: 1fr;
   }
@@ -395,8 +343,7 @@
     );
   }
   .partner,
-  .expertise,
-  .how {
+  .expertise {
     padding: 3.5rem 1.25rem;
   }
   .partnerFeatures {
@@ -411,9 +358,6 @@
   .expertiseGrid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-  }
-  .howGrid {
-    grid-template-columns: 1fr;
   }
   .ctaContent {
     padding: 2.5rem 1.25rem;
