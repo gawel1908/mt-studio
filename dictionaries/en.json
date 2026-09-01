@@ -159,7 +159,7 @@
     "join_cta": "Send application",
     "spontaneous_title": "Speculative application",
     "spontaneous_text": "If you'd like to join MT-Projekt, leave us a few details about yourself. We'll gladly come back to your application when the right moment comes.",
-    "spontaneous_cta": "Apply speculatively"
+    "spontaneous_cta": "Send your CV"
   },
   "oferta_page": {
     "home": "Home",
@@ -175,15 +175,15 @@
     "hero_eyebrow": "International Cooperation",
     "hero_title": "Road design.",
     "hero_title_accent": "Beyond borders.",
-    "hero_text": "We support engineering companies, contractors and investors with road infrastructure design, traffic engineering and CAD/BIM documentation. Based in Poland. Ready for projects worldwide.",
+    "hero_text": "We deliver comprehensive road infrastructure design, covering roads and streets as well as sanitary and telecommunications networks. We create functional, safe and cost-effective solutions tailored to the needs of investors and users.",
     "hero_cta": "Discuss your project",
     "partner_eyebrow": "International Design Partner",
     "partner_title": "Your project.",
     "partner_title2": "Our engineering expertise.",
-    "partner_text": "We can join your project team at any stage — providing road design expertise, digital documentation and technical coordination tailored to your workflow and project requirements.",
+    "partner_text": "We provide comprehensive support at every stage of an investment — from concept through construction documentation to multidisciplinary coordination — tailored to the project's requirements and delivery process.",
     "partner_feature1": "Flexible cooperation",
-    "partner_feature2": "English documentation",
-    "partner_feature3": "CAD / BIM workflows",
+    "partner_feature2": "On-time delivery",
+    "partner_feature3": "Alignment with client standards",
     "expertise_eyebrow": "Our Expertise",
     "expertise_title": "Road infrastructure is what we know best.",
     "expertise1_title": "Road & Street Design",

@@ -159,7 +159,7 @@
     "join_cta": "Prześlij aplikację",
     "spontaneous_title": "Aplikacja spontaniczna",
     "spontaneous_text": "Jeśli chcesz dołączyć do MT-Projekt, zostaw nam kilka informacji o sobie. Chętnie wrócimy do Twojej aplikacji, gdy pojawi się odpowiedni moment.",
-    "spontaneous_cta": "Aplikuj spontanicznie"
+    "spontaneous_cta": "Wyślij swoje CV"
   },
   "oferta_page": {
     "home": "Strona główna",
@@ -175,15 +175,15 @@
     "hero_eyebrow": "Międzynarodowa współpraca",
     "hero_title": "Projektujemy drogi.",
     "hero_title_accent": "Bez granic.",
-    "hero_text": "Wspieramy inżynierów, firmy budowlane, inwestorów oraz instytucje publiczne w zakresie projektowania dróg, projektowania inżynieryjnego oraz dokumentacji CAD/BIM. Działamy w Polsce. Gotowi na projekty na całym świecie.",
+    "hero_text": "Projektujemy kompleksową infrastrukturę drogową, obejmującą drogi i ulice, a także sieci sanitarne oraz teletechniczne. Tworzymy funkcjonalne, bezpieczne i ekonomiczne rozwiązania dostosowane do potrzeb inwestorów i użytkowników.",
     "hero_cta": "Omów swój projekt",
     "partner_eyebrow": "Partner w projektowaniu",
     "partner_title": "Twój projekt.",
     "partner_title2": "Nasza wiedza inżynierska.",
-    "partner_text": "Dołącz do współpracy na każdym etapie projektu – zapewniamy ekspertyzę w projektowaniu dróg, dokumentacji cyfrowej i koordynacji technicznej, dopasowaną do Twoich wymagań oraz procesów realizacji.",
+    "partner_text": "Zapewniamy kompleksową obsługę na każdym etapie inwestycji – od koncepcji po dokumentację wykonawczą i koordynację międzybranżową – dostosowaną do wymagań projektu oraz procesu jego realizacji.",
     "partner_feature1": "Elastyczna współpraca",
-    "partner_feature2": "Dokumentacja w języku polskim i angielskim",
-    "partner_feature3": "Obsługa CAD / BIM w różnych środowiskach",
+    "partner_feature2": "Terminowa realizacja",
+    "partner_feature3": "Dopasowanie do standardów klienta",
     "expertise_eyebrow": "Nasza specjalizacja",
     "expertise_title": "Infrastruktura drogowa to nasza specjalność.",
     "expertise1_title": "Projektowanie dróg i ulic",

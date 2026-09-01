@@ -4,7 +4,6 @@ import { studioInfo } from '@/lib/mockData'
 import { getFeaturedProjects, getTeam } from '@/lib/sanity'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import ContactForm from '@/components/ContactForm/ContactForm'
-import CooperationTabs from '@/components/CooperationTabs/CooperationTabs'
 import { Dictionary } from '@/lib/dictionaries'
 import styles from '@/styles/home.module.css'
 
@@ -217,15 +216,6 @@ export default async function HomePage({ lang, dict }: Props) {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* WSPÓŁPRACA */}
-      <section className={styles.cooperation} id="wspolpraca">
-        <div className={styles.sectionCenter}>
-          <span className={styles.eyebrow}>{d.cooperation.eyebrow}</span>
-          <h2 className={styles.sectionTitle}>{d.cooperation.title}</h2>
-        </div>
-        <CooperationTabs dict={d.cooperation} />
       </section>
 
       {/* KONTAKT */}
