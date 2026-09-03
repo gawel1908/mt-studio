@@ -24,6 +24,7 @@ export default function Footer({ lang, tagline }: Props) {
         <div className={styles.right}>
           <strong>INFRASTRUKTURA DROGOWA</strong>
           <p>biuro@mt-p.pl</p>
+          <p>Adres e-doręczeń: AE:PL-12056-90342-WDIAT-06</p>
         </div>
       </div>
     </footer>
