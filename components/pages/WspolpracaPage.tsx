@@ -50,11 +50,11 @@ export default function WspolpracaPage({ lang, dict }: Props) {
       text: d.partner_feature1,
     },
     {
-      image: "/images/wspolpraca/dokumentacja-pl-en.png",
+      image: "/images/wspolpraca/terminowa-realizacja.png",
       text: d.partner_feature2,
     },
     {
-      image: "/images/wspolpraca/obsluga-cad-bim.png",
+      image: "/images/wspolpraca/dopasowanie-standardy-klienta.png",
       text: d.partner_feature3,
     },
   ];
