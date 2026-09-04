@@ -58,4 +58,5 @@ export interface JobPosting {
   employmentType: string
   summary: string
   description?: string
+  externalUrl?: string
 }

@@ -154,7 +154,12 @@ export default async function KarieraPage({ lang, dict }: Props) {
           <h2 className={styles.jobsTitle}>{d.jobs_title}</h2>
           <div className={styles.jobsList}>
             {visibleJobs.map((job) => (
-              <Link key={job.id} href={`${base}/kariera/oferty/${job.slug}`} className={styles.jobRow}>
+              <Link
+                key={job.id}
+                href={job.externalUrl || `${base}/kariera/oferty/${job.slug}`}
+                {...(job.externalUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={styles.jobRow}
+              >
                 <div className={styles.jobIcon}>
                   <JobCategoryIcon category={job.category} />
                 </div>

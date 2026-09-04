@@ -31,7 +31,7 @@ export const jobPostingSchema = defineType({
       options: { list: CATEGORIES, layout: 'dropdown' },
       initialValue: 'roads',
     }),
-    defineField({ name: 'location', title: 'Lokalizacja', type: 'string', initialValue: 'Pruszków' }),
+    defineField({ name: 'location', title: 'Lokalizacja', type: 'string', initialValue: 'Grójec' }),
     defineField({
       name: 'employment_type_pl',
       title: 'Wymiar pracy (PL)',
@@ -53,6 +53,13 @@ export const jobPostingSchema = defineType({
       validation: r => r.required(),
     }),
     defineField({ name: 'summary_en', title: 'Krótki opis na liście (EN)', type: 'text', rows: 2 }),
+    defineField({
+      name: 'externalUrl',
+      title: 'Link do ogłoszenia (OLX / Pracuj.pl)',
+      type: 'url',
+      description: 'Pełny adres ogłoszenia. Kliknięcie w ofertę na stronie otworzy ten link w nowej karcie.',
+      validation: r => r.required().uri({ scheme: ['http', 'https'] }),
+    }),
     defineField({
       name: 'description_pl',
       title: 'Pełny opis oferty (PL)',

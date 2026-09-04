@@ -30,7 +30,8 @@ export default async function OfertyPage({ lang, dict }: Props) {
           {jobs.map((job) => (
             <Link
               key={job.id}
-              href={`${base}/kariera/oferty/${job.slug}`}
+              href={job.externalUrl || `${base}/kariera/oferty/${job.slug}`}
+              {...(job.externalUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className={styles.jobRow}
             >
               <div className={styles.jobIcon}>

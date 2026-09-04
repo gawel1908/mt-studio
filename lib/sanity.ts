@@ -63,7 +63,8 @@ const jobFields = (lang: string) => {
     location,
     "employmentType": coalesce(employment_type_${l}, employment_type_pl),
     "summary": coalesce(summary_${l}, summary_pl),
-    "description": coalesce(description_${l}, description_pl)
+    "description": coalesce(description_${l}, description_pl),
+    externalUrl
   `
 }
 
