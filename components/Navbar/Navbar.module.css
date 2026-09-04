@@ -108,6 +108,15 @@
 
 .langSwitch:hover { color: #0a0a0a; }
 
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.socialLink:hover { color: var(--accent-light); }
+
 .cta {
   display: inline-flex;
   align-items: center;
