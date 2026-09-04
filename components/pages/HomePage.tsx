@@ -233,7 +233,7 @@ export default async function HomePage({ lang, dict }: Props) {
                 <p>MT-Projekt Sp. z o.o.</p>
                 <p>{studioInfo.address}</p>
                 <p>{studioInfo.phone}</p>
-                <p>Adres e-doręczeń: AE:PL-12056-90342-WDIAT-06</p>
+                <p>{isEn ? "E-delivery address" : "Adres e-doręczeń"}: AE:PL-12056-90342-WDIAT-06</p>
               </div>
             </div>
             <div className={styles.contactFormWrap}>
