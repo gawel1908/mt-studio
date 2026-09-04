@@ -6,7 +6,7 @@ import { getDictionary } from '@/lib/dictionaries'
 
 export const metadata: Metadata = {
   title: 'MT Projekt',
-  description: 'Pracownia architektoniczna — architektura i wnętrza',
+  description: 'Biuro projektowe — infrastruktura drogowa',
 }
 
 export default async function PlLayout({ children }: { children: React.ReactNode }) {
